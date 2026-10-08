@@ -32,6 +32,8 @@ export const imageSizes = {
   half: "(min-width: 48rem) 50vw, 100vw",
   /** Five-column media beside text from lg (hero); full width below. */
   aside: "(min-width: 90rem) 36rem, (min-width: 64rem) 42vw, 100vw",
+  /** Seven columns bleeding to the viewport edge from lg; full width below. */
+  feature: "(min-width: 64rem) 62vw, 100vw",
   /** Narrow column of a 4/8 or 3/9 split, or a three-up grid. */
   third: "(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw",
 } as const;

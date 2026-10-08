@@ -83,8 +83,8 @@ export function MobileNav({ items, action, brand, contact }: MobileNavProps) {
     timelineRef.current = gsap
       .timeline({ defaults: { ease: emphasized, duration: durations.normal } })
       .fromTo(dialog, { clipPath: "inset(0% 0% 100% 0%)" }, { clipPath: "inset(0% 0% 0% 0%)" })
-      .from(select("[data-menu-item]"), { autoAlpha: 0, y: distances.md, stagger: staggers.tight }, durations.fast)
-      .from(select("[data-menu-cta]"), { autoAlpha: 0, y: distances.sm }, "-=0.35");
+      .from(select("[data-menu-item]"), { opacity: 0, y: distances.md, stagger: staggers.tight }, durations.fast)
+      .from(select("[data-menu-cta]"), { opacity: 0, y: distances.sm }, "-=0.35");
   };
 
   const closeMenu = () => {

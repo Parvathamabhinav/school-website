@@ -47,8 +47,8 @@ export function HeroMotion({ children, className }: HeroMotionProps) {
         if (!alreadyVisible) {
           gsap
             .timeline({ defaults: { ease: emphasized, duration: durations.normal } })
-            .from(select("[data-hero-eyebrow]"), { autoAlpha: 0, y: distances.sm })
-            .from(select("[data-hero-line]"), { autoAlpha: 0, y: distances.md, stagger: staggers.loose }, 0.08)
+            .from(select("[data-hero-eyebrow]"), { opacity: 0, y: distances.sm })
+            .from(select("[data-hero-line]"), { opacity: 0, y: distances.md, stagger: staggers.loose }, 0.08)
             .fromTo(
               media,
               { clipPath: "inset(100% 0% 0% 0%)" },
@@ -56,9 +56,9 @@ export function HeroMotion({ children, className }: HeroMotionProps) {
               0.15,
             )
             .fromTo(mediaImage, { scale: 1.16 }, { scale: 1.08, duration: durations.slow }, 0.15)
-            .from(select("[data-hero-description]"), { autoAlpha: 0, y: distances.sm }, 0.42)
-            .from(select("[data-hero-actions]"), { autoAlpha: 0, y: distances.sm }, 0.52)
-            .from(select("[data-hero-meta]"), { autoAlpha: 0, ease: standard }, 0.85);
+            .from(select("[data-hero-description]"), { opacity: 0, y: distances.sm }, 0.42)
+            .from(select("[data-hero-actions]"), { opacity: 0, y: distances.sm }, 0.52)
+            .from(select("[data-hero-meta]"), { opacity: 0, ease: standard }, 0.85);
         } else if (mediaImage) {
           gsap.set(mediaImage, { scale: 1.08 });
         }

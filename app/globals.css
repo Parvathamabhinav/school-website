@@ -287,6 +287,13 @@
   column-gap: var(--spacing-grid);
 }
 
+/* Inside a Container width="wide": extend from the grid column to the
+   viewport's right edge, breaking the container for large imagery. The
+   section should clip horizontal overflow (100vw includes the scrollbar). */
+@utility bleed-right {
+  margin-right: calc((min(100vw, var(--container-wide)) - 100vw) / 2 - var(--spacing-gutter));
+}
+
 /* ==========================================================================
    Interaction & motion
    --------------------------------------------------------------------------

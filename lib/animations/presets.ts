@@ -17,6 +17,10 @@ import type { AnimationPreset } from "./types";
  *
  * Presets never check reduced motion themselves; callers run them inside
  * gsap.matchMedia() with motionQueries (see <Reveal>).
+ *
+ * Presets fade opacity only, never visibility (no autoAlpha): hidden
+ * elements drop out of the tab order, which would make links in sections
+ * that haven't scrolled into view yet unreachable by keyboard.
  */
 
 const emphasized: Easing = "emphasized";
@@ -24,7 +28,7 @@ const standard: Easing = "standard";
 
 export const fadeIn: AnimationPreset = (target, options = {}) =>
   gsap.from(target, {
-    autoAlpha: 0,
+    opacity: 0,
     duration: options.duration ?? durations.normal,
     ease: standard,
     delay: options.delay,
@@ -34,7 +38,7 @@ export const fadeIn: AnimationPreset = (target, options = {}) =>
 
 export const fadeUp: AnimationPreset = (target, options = {}) =>
   gsap.from(target, {
-    autoAlpha: 0,
+    opacity: 0,
     y: distances.md,
     duration: options.duration ?? durations.normal,
     ease: emphasized,
@@ -45,7 +49,7 @@ export const fadeUp: AnimationPreset = (target, options = {}) =>
 
 export const fadeDown: AnimationPreset = (target, options = {}) =>
   gsap.from(target, {
-    autoAlpha: 0,
+    opacity: 0,
     y: -distances.sm,
     duration: options.duration ?? durations.normal,
     ease: emphasized,
@@ -56,7 +60,7 @@ export const fadeDown: AnimationPreset = (target, options = {}) =>
 
 export const stagger: AnimationPreset = (target, options = {}) =>
   gsap.from(target, {
-    autoAlpha: 0,
+    opacity: 0,
     y: distances.sm,
     duration: options.duration ?? durations.normal,
     ease: emphasized,
@@ -90,7 +94,7 @@ export const imageReveal: AnimationPreset = (target, options = {}) => {
 
 export const scaleReveal: AnimationPreset = (target, options = {}) =>
   gsap.from(target, {
-    autoAlpha: 0,
+    opacity: 0,
     scale: 0.96,
     duration: options.duration ?? durations.slow,
     ease: emphasized,

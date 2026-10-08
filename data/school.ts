@@ -1,5 +1,5 @@
 import type { School } from "@/types/school";
-import { placeholderPortrait } from "./placeholders";
+import { placeholderLandscape, placeholderPortrait } from "./placeholders";
 
 const establishedYear = 1965;
 
@@ -81,6 +81,25 @@ export const school: School = {
       { value: "12", label: "Learning spaces" },
     ],
     note: "Illustrative figures for development only.",
+  },
+  story: {
+    eyebrow: "Our story",
+    title: "Education with purpose, curiosity and character.",
+    body: "We create an environment where students are encouraged to think deeply, discover confidently and grow into capable, thoughtful people.",
+    link: { label: "Discover our story", href: "/about" },
+    media: {
+      image: {
+        ...placeholderLandscape,
+        alt: "Placeholder for a photograph of students and teachers together",
+      },
+      // Phones crop to portrait, so give them a portrait source.
+      mobileImage: {
+        ...placeholderPortrait,
+        alt: "Placeholder for a photograph of students and teachers together",
+      },
+      focalPoint: "70% 55%",
+      caption: "Placeholder image: replace with school photography.",
+    },
   },
   programs: [],
   facilities: [],

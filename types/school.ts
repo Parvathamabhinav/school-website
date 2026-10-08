@@ -1,3 +1,4 @@
+import type { AspectRatio } from "@/lib/media/presets";
 import type { ImageAsset, VideoSource, VideoAsset } from "./media";
 
 /**
@@ -19,6 +20,7 @@ export interface School {
   announcement?: Announcement;
   hero: HeroContent;
   impact?: ImpactContent;
+  story?: StoryContent;
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
   facilities: Facility[];
@@ -130,7 +132,13 @@ export interface HeroContent {
   meta?: string[];
 }
 
-export interface HeroMedia {
+/**
+ * A single editorial image with optional art direction. Shared by sections;
+ * supply photography close to the crop ratio, since cover crops scale to
+ * fill and a much wider source would be upscaled.
+ */
+export interface EditorialMedia {
+  /** Use alt: "" for a purely decorative image. */
   image: ImageAsset;
   /** Art-directed asset for small screens; falls back to `image`. */
   mobileImage?: ImageAsset;
@@ -138,6 +146,9 @@ export interface HeroMedia {
   focalPoint?: string;
   /** Focal point for the mobile crop; falls back to `focalPoint`. */
   mobileFocalPoint?: string;
+}
+
+export interface HeroMedia extends EditorialMedia {
   /**
    * Optional muted ambient video. `image` is its poster and the fallback
    * for reduced motion or load failure.
@@ -166,6 +177,23 @@ export interface ImpactStat {
   /** Display value, kept as written: "25+", "5,000+", "98%". */
   value: string;
   label: string;
+}
+
+/** "Who we are": an image-led introduction to the school's character. */
+export interface StoryContent {
+  eyebrow?: string;
+  title: string;
+  body: string;
+  link?: LinkAction;
+  media: StoryMedia;
+}
+
+export interface StoryMedia extends EditorialMedia {
+  /** Crop from tablet up. Defaults to "landscape". */
+  aspectRatio?: AspectRatio;
+  /** Crop on phones. Defaults to "portrait". */
+  mobileAspectRatio?: AspectRatio;
+  caption?: string;
 }
 
 export interface PrincipalMessage {

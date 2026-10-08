@@ -64,12 +64,17 @@ export function Reveal({
       const mm = gsap.matchMedia();
       if (!failsafeFired) {
         mm.add(motionQueries.motionOk, () => {
-          presets[preset](target === "children" ? targets : element, {
+          const animation = presets[preset](target === "children" ? targets : element, {
             delay,
             stagger,
             scrollTrigger:
               trigger === "scroll" ? { trigger: element, start: revealScrollStart, once: true } : undefined,
           });
+
+          // Keyboard focus landing inside unrevealed content shows it at once.
+          const reveal = () => animation.progress(1);
+          element.addEventListener("focusin", reveal);
+          return () => element.removeEventListener("focusin", reveal);
         });
       }
 
