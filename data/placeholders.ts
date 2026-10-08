@@ -21,3 +21,14 @@ export const placeholderPortrait: ImageAsset = {
   blurDataURL:
     "data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCAAPAAwDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAABgMF/8QAHxAAAgEDBQEAAAAAAAAAAAAAAQIDAAQFBhEhMbFB/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAXEQEBAQEAAAAAAAAAAAAAAAABACER/9oADAMBAAIRAxEAPwBVcX9vAxSRyGHfFTjnSdBJGd1bo0W1DemPKzIN+AvgrYwkhfEwMfoPpqJnYO3/2Q==",
 };
+
+/** Further abstract landscape variants, for sections that switch between images. */
+export const placeholderLandscapeSet: ImageAsset[] = [
+  placeholderLandscape,
+  ...["landscape-2", "landscape-3", "landscape-4"].map((name) => ({
+    src: `/images/placeholders/${name}.jpg`,
+    alt: "Abstract placeholder composition",
+    width: 2400,
+    height: 1600,
+  })),
+];

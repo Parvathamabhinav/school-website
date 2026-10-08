@@ -1,5 +1,5 @@
 import type { School } from "@/types/school";
-import { placeholderLandscape, placeholderPortrait } from "./placeholders";
+import { placeholderLandscape, placeholderLandscapeSet, placeholderPortrait } from "./placeholders";
 
 const establishedYear = 1965;
 
@@ -100,6 +100,40 @@ export const school: School = {
       focalPoint: "70% 55%",
       caption: "Placeholder image: replace with school photography.",
     },
+  },
+  // DEVELOPMENT PLACEHOLDERS: illustrative principles, not an official
+  // curriculum. Replace copy and imagery with the school's own.
+  learning: {
+    eyebrow: "How we learn",
+    title: "Learning that goes deeper than the lesson.",
+    description:
+      "A few principles shape how teachers teach and how students learn, from the first year to the last.",
+    principles: [
+      {
+        id: "discover",
+        title: "Discover",
+        description: "Students learn to observe, question and explore beyond the obvious.",
+        media: { image: { ...placeholderLandscapeSet[0], alt: "Placeholder for a photograph of students exploring" } },
+      },
+      {
+        id: "think",
+        title: "Think",
+        description: "Learning becomes deeper when students connect ideas and reason independently.",
+        media: { image: { ...placeholderLandscapeSet[1], alt: "Placeholder for a photograph of a seminar discussion" } },
+      },
+      {
+        id: "create",
+        title: "Create",
+        description: "Students turn knowledge into ideas, projects and meaningful work.",
+        media: { image: { ...placeholderLandscapeSet[2], alt: "Placeholder for a photograph of students making something" } },
+      },
+      {
+        id: "lead",
+        title: "Lead",
+        description: "Confidence grows through responsibility, collaboration and purposeful action.",
+        media: { image: { ...placeholderLandscapeSet[3], alt: "Placeholder for a photograph of students leading an activity" } },
+      },
+    ],
   },
   programs: [],
   facilities: [],

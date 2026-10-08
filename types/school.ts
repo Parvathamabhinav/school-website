@@ -21,6 +21,7 @@ export interface School {
   hero: HeroContent;
   impact?: ImpactContent;
   story?: StoryContent;
+  learning?: LearningContent;
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
   facilities: Facility[];
@@ -194,6 +195,24 @@ export interface StoryMedia extends EditorialMedia {
   /** Crop on phones. Defaults to "portrait". */
   mobileAspectRatio?: AspectRatio;
   caption?: string;
+}
+
+/** "How we educate": a set of principles, each paired with an image. */
+export interface LearningContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  /** Three to five read best; any number is supported. */
+  principles: LearningPrinciple[];
+}
+
+export interface LearningPrinciple {
+  /** Stable, URL-safe identifier, unique within the section. */
+  id: string;
+  title: string;
+  description: string;
+  /** Landscape (3:2) photography suits every layout this is shown in. */
+  media: EditorialMedia;
 }
 
 export interface PrincipalMessage {
