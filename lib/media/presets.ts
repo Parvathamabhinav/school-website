@@ -30,6 +30,8 @@ export const imageSizes = {
   content: "(min-width: 76rem) 76rem, 100vw",
   /** Half of a split layout (side by side from md). */
   half: "(min-width: 48rem) 50vw, 100vw",
+  /** Five-column media beside text from lg (hero); full width below. */
+  aside: "(min-width: 90rem) 36rem, (min-width: 64rem) 42vw, 100vw",
   /** Narrow column of a 4/8 or 3/9 split, or a three-up grid. */
   third: "(min-width: 64rem) 33vw, (min-width: 48rem) 50vw, 100vw",
 } as const;

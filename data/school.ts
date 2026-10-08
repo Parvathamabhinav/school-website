@@ -1,4 +1,7 @@
 import type { School } from "@/types/school";
+import { placeholderPortrait } from "./placeholders";
+
+const establishedYear = 1965;
 
 /**
  * Active school data. This is the only file that should change when the
@@ -10,7 +13,7 @@ export const school: School = {
   name: "Example Academy",
   shortName: "Example",
   tagline: "A place for curious minds.",
-  establishedYear: 1965,
+  establishedYear,
   brand: {
     favicon: "/icons/favicon.svg",
     colors: {
@@ -47,7 +50,37 @@ export const school: School = {
     linkLabel: "Find out more",
   },
   hero: {
-    title: "A place for curious minds.",
+    eyebrow: "An education for what comes next",
+    title: ["Where curiosity", "becomes", "possibility."],
+    description: "A place to learn deeply, explore boldly and grow with purpose.",
+    primaryAction: { label: "Explore our school", href: "/about" },
+    secondaryAction: { label: "Discover our story", href: "/about#story" },
+    media: {
+      // Supply photography close to the desktop portrait crop (4:5): cover
+      // crops scale to fill, so a much wider source would be upscaled.
+      image: {
+        ...placeholderPortrait,
+        alt: "Placeholder for a photograph of the school campus",
+      },
+      focalPoint: "50% 60%",
+    },
+    meta: [`Est. ${establishedYear}`, "Curiosity · Rigour · Care"],
+  },
+  // DEVELOPMENT PLACEHOLDERS: illustrative figures, not facts about any real
+  // school. Replace every value with verified figures before launch.
+  impact: {
+    eyebrow: "A legacy of learning",
+    statement: [
+      "Education is more than preparation for examinations.",
+      "It is preparation for life.",
+    ],
+    stats: [
+      { value: "25+", label: "Years of excellence" },
+      { value: "5,000+", label: "Students" },
+      { value: "98%", label: "Academic success" },
+      { value: "12", label: "Learning spaces" },
+    ],
+    note: "Illustrative figures for development only.",
   },
   programs: [],
   facilities: [],

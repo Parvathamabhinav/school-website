@@ -152,7 +152,7 @@ export function MobileNav({ items, action, brand, contact }: MobileNavProps) {
         className="m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto overscroll-contain border-0 bg-background p-0 text-text backdrop:bg-transparent"
       >
         <div className="flex min-h-full flex-col">
-          <Container className="flex items-center justify-between gap-lg py-lg">
+          <Container width="wide" className="flex items-center justify-between gap-lg py-lg">
             {brand}
             <button
               ref={closeRef}
@@ -165,7 +165,7 @@ export function MobileNav({ items, action, brand, contact }: MobileNavProps) {
             </button>
           </Container>
 
-          <Container className="flex flex-1 flex-col justify-between gap-2xl pt-lg pb-xl">
+          <Container width="wide" className="flex flex-1 flex-col justify-between gap-2xl pt-lg pb-xl">
             <nav aria-label="Main">
               <ul className="border-t border-border-subtle">
                 {items.map((item, index) => (

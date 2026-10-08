@@ -142,6 +142,28 @@
   --ease-standard: var(--motion-ease-standard);
   --ease-emphasized: var(--motion-ease-emphasized);
   --ease-exit: var(--motion-ease-exit);
+
+  /* Scroll cue: a hairline that draws down, then clears, slowly. */
+  --animate-scroll-cue: scroll-cue 2.8s var(--motion-ease-emphasized) infinite;
+
+  @keyframes scroll-cue {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    45% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    55% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
 }
 
 /* ==========================================================================
@@ -347,6 +369,29 @@
     &:hover {
       animation: link-redraw var(--motion-duration-slow) var(--motion-ease-emphasized);
     }
+  }
+}
+
+/* Entrance hand-off ----------------------------------------------------------
+   Server-rendered content that will animate in is marked data-motion-item
+   inside a data-motion-pending wrapper (HeroMotion), or is a <Reveal>
+   wrapper / its children (data-motion-reveal). It starts hidden (only when motion is
+   allowed) so it doesn't flash before hydration; the client removes the
+   wrapper attribute once GSAP owns the initial state. If JavaScript never
+   arrives, the failsafe reveals everything after a short delay; without
+   JavaScript at all, the <noscript> rule in the root layout does. */
+@media (prefers-reduced-motion: no-preference) {
+  [data-motion-pending] [data-motion-item],
+  [data-motion-pending][data-motion-reveal="self"],
+  [data-motion-pending][data-motion-reveal="children"] > * {
+    opacity: 0;
+    animation: motion-failsafe 0s linear 1.5s forwards;
+  }
+}
+
+@keyframes motion-failsafe {
+  to {
+    opacity: 1;
   }
 }
 

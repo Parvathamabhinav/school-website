@@ -38,7 +38,3 @@ export interface VideoAsset {
   width: number;
   height: number;
 }
-
-export type MediaAsset =
-  | ({ kind: "image" } & ImageAsset)
-  | ({ kind: "video" } & VideoAsset);

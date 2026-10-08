@@ -24,6 +24,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       style={getThemeCssVariables(school.brand.colors)}
     >
       <body>
+        {/* Without JavaScript, never leave entrance-animation content hidden (see globals.css). */}
+        <noscript>
+          <style>{"[data-motion-pending] [data-motion-item], [data-motion-pending][data-motion-reveal], [data-motion-pending][data-motion-reveal] > * { opacity: 1 !important; animation: none !important; }"}</style>
+        </noscript>
         <SkipLink />
         <AnnouncementBar announcement={school.announcement} />
         <Navbar />

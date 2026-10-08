@@ -1,4 +1,4 @@
-import type { ImageAsset, MediaAsset, VideoAsset } from "./media";
+import type { ImageAsset, VideoSource, VideoAsset } from "./media";
 
 /**
  * The complete description of one school. Presentation components receive
@@ -18,6 +18,7 @@ export interface School {
   seo: SchoolSeo;
   announcement?: Announcement;
   hero: HeroContent;
+  impact?: ImpactContent;
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
   facilities: Facility[];
@@ -113,11 +114,58 @@ export interface LinkAction {
 }
 
 export interface HeroContent {
+  /** Short institutional label above the headline. */
   eyebrow?: string;
-  title: string;
+  /**
+   * Headline as deliberate lines. Each entry starts a new line and reveals
+   * as one group; long lines may still wrap on narrow screens.
+   * e.g. ["Where curiosity", "becomes", "possibility."]
+   */
+  title: string[];
   description?: string;
-  media?: MediaAsset;
-  actions?: LinkAction[];
+  primaryAction?: LinkAction;
+  secondaryAction?: LinkAction;
+  media?: HeroMedia;
+  /** Small editorial facts shown along the foot of the hero, e.g. "Est. 1965". */
+  meta?: string[];
+}
+
+export interface HeroMedia {
+  image: ImageAsset;
+  /** Art-directed asset for small screens; falls back to `image`. */
+  mobileImage?: ImageAsset;
+  /** CSS object-position focal point for cropping, e.g. "50% 30%". */
+  focalPoint?: string;
+  /** Focal point for the mobile crop; falls back to `focalPoint`. */
+  mobileFocalPoint?: string;
+  /**
+   * Optional muted ambient video. `image` is its poster and the fallback
+   * for reduced motion or load failure.
+   */
+  video?: { sources: VideoSource[]; title: string };
+  /** Tint the media with the primary colour (for text placed over it). */
+  overlay?: boolean;
+}
+
+/** Evidence section after the hero: a statement backed by a few figures. */
+export interface ImpactContent {
+  eyebrow?: string;
+  /**
+   * The section heading, as sentence parts rendered inline. Parts after the
+   * first are set in the muted tone, e.g.
+   * ["Education is more than preparation for examinations.", "It is preparation for life."]
+   */
+  statement: string[];
+  /** Two to four figures read best; more wrap onto further rows. */
+  stats: ImpactStat[];
+  /** Qualifier shown under the figures, e.g. a source or "as of" date. */
+  note?: string;
+}
+
+export interface ImpactStat {
+  /** Display value, kept as written: "25+", "5,000+", "98%". */
+  value: string;
+  label: string;
 }
 
 export interface PrincipalMessage {

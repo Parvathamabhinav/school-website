@@ -22,7 +22,7 @@ export function Navbar() {
 
   return (
     <NavbarShell>
-      <Container className="flex items-center justify-between gap-lg py-lg transition-[padding] duration-(--motion-duration-normal) ease-emphasized group-data-[scrolled=true]/header:py-sm">
+      <Container width="wide" className="flex items-center justify-between gap-lg py-lg transition-[padding] duration-(--motion-duration-normal) ease-emphasized group-data-[scrolled=true]/header:py-sm">
         {brand}
         <div className="flex items-center gap-lg xl:gap-xl">
           <div className="hidden xl:block">
