@@ -1,22 +1,25 @@
 /**
- * Contract for reusable animation presets (fade-up, text stagger, clip
- * reveal, scale reveal, …), to be added under lib/animations/presets/.
+ * Contract for reusable animation presets (see ./presets.ts).
  *
- * A preset receives the element(s) to animate and returns the GSAP
- * animation it created, so callers (usually useGSAP inside a component in
- * components/animations/) can control or clean it up. Presets read timing
- * from `motion` in ./config and must be invoked within a reduced-motion
- * aware gsap.matchMedia() context.
+ * A preset receives the element(s) to animate and returns the GSAP animation
+ * it created, so callers can replay or clean it up. Presets only describe
+ * the motion; *when* it runs (on mount, on scroll) and *whether* it runs
+ * (reduced motion) is decided by the caller, normally the <Reveal>
+ * component in components/animations/.
  */
-export type AnimationTarget = Element | Element[] | string;
+export type AnimationTarget = Element | Element[] | NodeListOf<Element> | string;
 
 export interface AnimationPresetOptions {
   delay?: number;
+  /** Override the preset's default token duration (seconds). */
   duration?: number;
-  /** Trigger on scroll into view instead of immediately. */
-  scroll?: boolean;
+  /** Stagger between multiple targets (seconds). */
+  stagger?: number;
+  /** Attach to a ScrollTrigger instead of playing immediately. */
+  scrollTrigger?: ScrollTrigger.Vars;
 }
 
-export type AnimationPreset<
-  TOptions extends AnimationPresetOptions = AnimationPresetOptions,
-> = (target: AnimationTarget, options?: TOptions) => gsap.core.Animation;
+export type AnimationPreset = (
+  target: AnimationTarget,
+  options?: AnimationPresetOptions,
+) => gsap.core.Animation;

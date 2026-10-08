@@ -17,6 +17,11 @@ interface ResponsiveImageProps {
    * intrinsic ratio.
    */
   aspectRatio?: AspectRatio;
+  /**
+   * Focal point for cropped images, as a CSS object-position
+   * (e.g. "50% 30%" keeps faces in a portrait crop). Defaults to centre.
+   */
+  objectPosition?: string;
   /** Only for the above-the-fold image of a page (e.g. hero). Lazy otherwise. */
   preload?: boolean;
   className?: string;
@@ -25,12 +30,17 @@ interface ResponsiveImageProps {
 /**
  * Standard image primitive. Reserves space from known dimensions or a preset
  * ratio (no layout shift), lazy-loads by default and always renders the
- * asset's alt text.
+ * asset's alt text. For full-bleed media, place it in
+ * <Container width="bleed"> with sizes="full".
+ *
+ * When cropped, the image is the frame's first child, which the imageReveal
+ * motion preset relies on.
  */
 export function ResponsiveImage({
   image,
   sizes,
   aspectRatio,
+  objectPosition,
   preload = false,
   className,
 }: ResponsiveImageProps) {
@@ -54,8 +64,7 @@ export function ResponsiveImage({
 
   return (
     <div
-      className={cn("relative w-full overflow-hidden bg-surface", className)}
-      style={{ aspectRatio: aspectRatios[aspectRatio] }}
+      className={cn("relative w-full overflow-hidden bg-surface", aspectRatios[aspectRatio].className, className)}
     >
       <Image
         src={image.src}
@@ -66,6 +75,7 @@ export function ResponsiveImage({
         placeholder={placeholder}
         blurDataURL={image.blurDataURL}
         className="object-cover"
+        style={objectPosition ? { objectPosition } : undefined}
       />
     </div>
   );

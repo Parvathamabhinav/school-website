@@ -16,6 +16,7 @@ export interface School {
   contact: SchoolContact;
   socialLinks: SocialLink[];
   seo: SchoolSeo;
+  announcement?: Announcement;
   hero: HeroContent;
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
@@ -47,7 +48,11 @@ export interface BrandPalette {
 }
 
 export interface SchoolBrand {
-  logo: ImageAsset;
+  /**
+   * Full logo lockup (ideally SVG, with alt text naming the school). When
+   * omitted, the site renders a typographic wordmark from the school name.
+   */
+  logo?: ImageAsset;
   /** Path to the favicon under /public. */
   favicon: string;
   colors: BrandPalette;
@@ -92,6 +97,15 @@ export interface SchoolSeo {
 }
 
 /* -------------------------------------------------------------- Content -- */
+
+/** Site-wide notice shown above the navbar. Remove or disable to hide it. */
+export interface Announcement {
+  enabled: boolean;
+  text: string;
+  href?: string;
+  /** Visible link text; required for the link to render. */
+  linkLabel?: string;
+}
 
 export interface LinkAction {
   label: string;

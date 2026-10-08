@@ -1,38 +1,57 @@
 @import "tailwindcss";
 
 /* ==========================================================================
-   Design tokens
+   Design System v1 — tokens
    --------------------------------------------------------------------------
-   Raw brand colors arrive as --brand-* variables, set on <html> from the
-   school's data (see config/theme.ts). Everything below maps them to
-   semantic tokens. Components use only the semantic utilities
-   (bg-primary, text-text-muted, border-border, …) — never raw hex values.
+   Sources of truth:
+   - Brand colours: data/school.ts → --brand-* on <html> (config/theme.ts)
+   - Motion:        lib/animations/tokens.ts → --motion-* on <html>
+   - Everything else is defined here.
+
+   Components use only the semantic utilities generated from these tokens
+   (bg-primary, text-text-muted, border-border, p-card, py-section-md, …).
+   Tailwind's default palette, type scale, container sizes, radii and shadows
+   are removed so off-system values cannot creep in.
    ========================================================================== */
 
 @theme {
-  /* Remove Tailwind's default palette so only semantic colors exist. */
+  /* Colour ------------------------------------------------------------------ */
   --color-*: initial;
 
   --color-primary: var(--brand-primary);
+  --color-primary-hover: color-mix(in oklab, var(--brand-primary) 82%, var(--brand-secondary));
+  --color-primary-active: color-mix(in oklab, var(--brand-primary) 85%, black);
+  /* Foreground for content placed on a primary fill. */
+  --color-on-primary: var(--brand-background);
   --color-secondary: var(--brand-secondary);
+
   --color-background: var(--brand-background);
   --color-surface: var(--brand-surface);
   --color-surface-muted: color-mix(in oklab, var(--brand-surface) 50%, var(--brand-background));
+
   --color-text: var(--brand-text);
   --color-text-muted: var(--brand-text-muted);
+
+  /* Brass: rules, icons, numerals, focus on dark. Never body text on light. */
   --color-accent: var(--brand-accent);
   --color-accent-alt: var(--brand-accent-alt);
-  --color-border: color-mix(in oklab, var(--brand-text) 14%, transparent);
-  --color-border-strong: color-mix(in oklab, var(--brand-text) 32%, transparent);
-  /* Foreground for content placed on primary/secondary surfaces. */
-  --color-on-primary: var(--brand-background);
+
+  --color-border-subtle: color-mix(in oklab, var(--brand-text) 8%, transparent);
+  --color-border: color-mix(in oklab, var(--brand-text) 16%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--brand-text) 42%, transparent);
+
+  /* Interaction states for non-filled elements (ghost buttons, rows). */
+  --color-overlay-hover: color-mix(in oklab, var(--brand-text) 5%, transparent);
+  --color-overlay-active: color-mix(in oklab, var(--brand-text) 10%, transparent);
+  --color-disabled: color-mix(in oklab, var(--brand-text) 8%, transparent);
+  --color-on-disabled: color-mix(in oklab, var(--brand-text) 45%, transparent);
+
   --color-focus: var(--brand-primary);
 
-  /* Typography ------------------------------------------------------------ */
+  /* Typography -------------------------------------------------------------- */
   --font-display: var(--font-newsreader), "Iowan Old Style", Georgia, serif;
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  /* Fluid type scale. Reset Tailwind's defaults so only this scale exists. */
   --text-*: initial;
 
   --text-display: clamp(3rem, 1.9rem + 5vw, 7rem);
@@ -51,7 +70,7 @@
   --text-h3--line-height: 1.2;
   --text-h3--letter-spacing: -0.01em;
 
-  --text-h4: 1.25rem;
+  --text-h4: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
   --text-h4--line-height: 1.35;
 
   --text-body-lg: clamp(1.125rem, 1.05rem + 0.3vw, 1.3125rem);
@@ -60,6 +79,9 @@
   --text-body: 1rem;
   --text-body--line-height: 1.65;
 
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.55;
+
   --text-label: 0.75rem;
   --text-label--line-height: 1.3;
   --text-label--letter-spacing: 0.14em;
@@ -67,31 +89,94 @@
   --text-meta: 0.8125rem;
   --text-meta--line-height: 1.45;
 
-  /* Spacing & layout ------------------------------------------------------
-     Tailwind's 0.25rem numeric scale stays the base unit; these semantic
-     steps cover page rhythm. Usage: px-gutter, py-section, gap-gutter. */
-  --spacing-gutter: clamp(1.25rem, 4vw, 3rem);
-  --spacing-section-sm: clamp(3rem, 6vw, 5rem);
-  --spacing-section: clamp(4.5rem, 10vw, 9rem);
-  --spacing-section-lg: clamp(6rem, 14vw, 12rem);
+  /* Spacing ------------------------------------------------------------------
+     Tailwind's 0.25rem base (p-4 = 1rem) stays for one-off alignment; prefer
+     these named steps for anything that expresses rhythm. */
+  --spacing-2xs: 0.25rem; /* micro: icon ↔ text */
+  --spacing-xs: 0.5rem; /* micro: label ↔ value */
+  --spacing-sm: 0.75rem; /* component: tight groups */
+  --spacing-md: 1rem; /* component: default gap */
+  --spacing-lg: 1.5rem; /* component: between related blocks */
+  --spacing-xl: clamp(2rem, 1.6rem + 1.5vw, 3rem); /* between groups */
+  --spacing-2xl: clamp(3rem, 2.2rem + 3vw, 5rem); /* large editorial pause */
+  --spacing-card: clamp(1.25rem, 0.9rem + 1.5vw, 2.25rem); /* card padding */
 
+  --spacing-gutter: clamp(1.25rem, 0.5rem + 3.5vw, 3rem); /* page edge */
+  --spacing-grid: clamp(1rem, 0.5rem + 2vw, 2.5rem); /* grid column gap */
+  --spacing-navbar: 4rem; /* compact (scrolled) navbar height */
+
+  --spacing-section-sm: clamp(3rem, 2rem + 4vw, 5rem);
+  --spacing-section-md: clamp(4.5rem, 3rem + 6vw, 8rem);
+  --spacing-section-lg: clamp(6rem, 3.5rem + 10vw, 11rem);
+
+  /* Layout widths (max-w-narrow / max-w-content / max-w-wide). */
+  --container-*: initial;
   --container-narrow: 42rem;
   --container-content: 76rem;
   --container-wide: 90rem;
 
-  /* Restrained corners: editorial layouts rely on edges, not pill cards. */
+  /* Media ratios (aspect-square is built in): aspect-portrait, aspect-landscape,
+     aspect-cinematic. Used by ResponsiveImage via lib/media/presets.ts. */
+  --aspect-portrait: 4 / 5;
+  --aspect-landscape: 3 / 2;
+  --aspect-cinematic: 21 / 9;
+
+  /* Shape: editorial layouts rely on edges, not rounded cards. */
   --radius-*: initial;
   --radius-xs: 0.125rem;
   --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
   --radius-full: 9999px;
 
-  /* Motion (CSS transitions; GSAP values live in lib/animations/config.ts). */
-  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+  /* Elevation: rare. Hierarchy comes from space, type and contrast. */
+  --shadow-*: initial;
+  --inset-shadow-*: initial;
+  --drop-shadow-*: initial;
+  --text-shadow-*: initial;
+  --shadow-sm: 0 1px 2px color-mix(in oklab, var(--brand-text) 8%, transparent);
+  --shadow-lift: 0 1.5rem 3rem -1.75rem color-mix(in oklab, var(--brand-primary) 40%, transparent);
+  --shadow-overlay: 0 2rem 4rem -2rem color-mix(in oklab, var(--brand-primary) 50%, transparent);
+
+  /* Motion: CSS easing utilities (ease-standard, …) backed by motion tokens. */
+  --ease-*: initial;
+  --ease-standard: var(--motion-ease-standard);
+  --ease-emphasized: var(--motion-ease-emphasized);
+  --ease-exit: var(--motion-ease-exit);
 }
 
 /* ==========================================================================
-   Typography roles: font family + size + weight in one class.
+   Inverse surface
+   --------------------------------------------------------------------------
+   Re-maps the semantic tokens for dark (primary-coloured) areas. Anything
+   inside — text, borders, buttons, links, focus rings — adapts without
+   component variants.
+   ========================================================================== */
+
+@utility theme-inverse {
+  --color-background: var(--brand-primary);
+  --color-surface: color-mix(in oklab, var(--brand-primary) 88%, var(--brand-background));
+  --color-surface-muted: color-mix(in oklab, var(--brand-primary) 94%, var(--brand-background));
+  --color-text: var(--brand-background);
+  --color-text-muted: color-mix(in oklab, var(--brand-background) 74%, var(--brand-primary));
+  --color-primary: var(--brand-background);
+  --color-primary-hover: var(--brand-surface);
+  --color-primary-active: color-mix(in oklab, var(--brand-surface) 85%, var(--brand-primary));
+  --color-on-primary: var(--brand-primary);
+  --color-border-subtle: color-mix(in oklab, var(--brand-background) 10%, transparent);
+  --color-border: color-mix(in oklab, var(--brand-background) 22%, transparent);
+  --color-border-strong: color-mix(in oklab, var(--brand-background) 50%, transparent);
+  --color-overlay-hover: color-mix(in oklab, var(--brand-background) 8%, transparent);
+  --color-overlay-active: color-mix(in oklab, var(--brand-background) 14%, transparent);
+  --color-disabled: color-mix(in oklab, var(--brand-background) 12%, transparent);
+  --color-on-disabled: color-mix(in oklab, var(--brand-background) 50%, transparent);
+  --color-focus: var(--brand-accent);
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+/* ==========================================================================
+   Typography roles: family + size + weight in one class. These are the
+   only way text should be styled.
    ========================================================================== */
 
 @utility type-display {
@@ -130,6 +215,7 @@
   font-family: var(--font-sans);
   font-size: var(--text-h4);
   line-height: var(--text-h4--line-height);
+  letter-spacing: -0.005em;
   font-weight: 600;
 }
 
@@ -143,6 +229,12 @@
   font-family: var(--font-sans);
   font-size: var(--text-body);
   line-height: var(--text-body--line-height);
+}
+
+@utility type-body-sm {
+  font-family: var(--font-sans);
+  font-size: var(--text-body-sm);
+  line-height: var(--text-body-sm--line-height);
 }
 
 @utility type-label {
@@ -161,11 +253,119 @@
   color: var(--color-text-muted);
 }
 
-/* 12-column editorial grid for asymmetric layouts (children set col-span). */
+/* ==========================================================================
+   Layout
+   ========================================================================== */
+
+/* 12-column editorial grid. Children default to full width and opt into
+   columns at breakpoints (see components/layout/Grid.tsx). */
 @utility grid-editorial {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  column-gap: var(--spacing-gutter);
+  column-gap: var(--spacing-grid);
+}
+
+/* ==========================================================================
+   Interaction & motion
+   --------------------------------------------------------------------------
+   Transition utilities read --motion-* tokens. The global reduced-motion
+   rule below neutralises them for users who ask for less motion.
+   ========================================================================== */
+
+@utility motion-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, opacity;
+  transition-duration: var(--motion-duration-fast);
+  transition-timing-function: var(--motion-ease-standard);
+}
+
+@utility motion-transform {
+  transition-property: transform;
+  transition-duration: var(--motion-duration-normal);
+  transition-timing-function: var(--motion-ease-emphasized);
+}
+
+/* Subtle elevation on hover, for pointer devices only. */
+@utility hover-lift {
+  transition-property: transform, box-shadow;
+  transition-duration: var(--motion-duration-normal);
+  transition-timing-function: var(--motion-ease-emphasized);
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(calc(var(--motion-distance-xs) * -1));
+      box-shadow: var(--shadow-lift);
+    }
+  }
+}
+
+/* Links ---------------------------------------------------------------------
+   The underline is a background layer sized by --link-line, so it can be
+   transitioned in CSS today and driven by GSAP later without markup changes.
+   --link-origin controls where it grows from / exits to. */
+
+@utility link-inline {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  text-decoration-color: var(--color-border-strong);
+  transition: text-decoration-color var(--motion-duration-fast) var(--motion-ease-standard);
+
+  &:hover {
+    text-decoration-color: currentColor;
+  }
+}
+
+@utility link-reveal {
+  --link-line: 0%;
+  --link-origin: right;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: var(--link-origin) 100%;
+  background-size: var(--link-line) 1px;
+  padding-bottom: 0.15em;
+  transition: background-size var(--motion-duration-normal) var(--motion-ease-emphasized);
+
+  &:hover,
+  &:focus-visible {
+    --link-line: 100%;
+    --link-origin: left;
+  }
+}
+
+/* Same as link-reveal but the line is present at rest and redraws on hover. */
+@utility link-underline {
+  --link-line: 100%;
+  --link-origin: left;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-repeat: no-repeat;
+  background-position: var(--link-origin) 100%;
+  background-size: var(--link-line) 1px;
+  padding-bottom: 0.15em;
+  transition: background-size var(--motion-duration-normal) var(--motion-ease-emphasized);
+
+  @media (hover: hover) {
+    &:hover {
+      animation: link-redraw var(--motion-duration-slow) var(--motion-ease-emphasized);
+    }
+  }
+}
+
+@keyframes link-redraw {
+  0% {
+    background-size: 100% 1px;
+    background-position: right 100%;
+  }
+  45% {
+    background-size: 0% 1px;
+    background-position: right 100%;
+  }
+  46% {
+    background-position: left 100%;
+  }
+  100% {
+    background-size: 100% 1px;
+    background-position: left 100%;
+  }
 }
 
 /* ==========================================================================
@@ -174,6 +374,9 @@
 
 @layer base {
   html {
+    /* Reserve the scrollbar's space so locking scroll (menus, dialogs) never
+       shifts the layout sideways. */
+    scrollbar-gutter: stable;
     background-color: var(--color-background);
     color: var(--color-text);
     font-family: var(--font-sans);
@@ -185,6 +388,13 @@
   body {
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
+  }
+
+  /* In-page anchor targets land below the sticky navbar. Applied to targets
+     rather than as html scroll-padding, which would make focusing controls
+     inside the pinned header scroll the page back to the top. */
+  [id] {
+    scroll-margin-top: calc(var(--spacing-navbar) + var(--spacing-md));
   }
 
   h1,
@@ -202,8 +412,8 @@
     color: var(--color-on-primary);
   }
 
-  /* Visible, high-contrast focus for keyboard users only. Sections on dark
-     backgrounds can override --color-focus locally. */
+  /* Visible, high-contrast focus for keyboard users only. Inverse surfaces
+     switch --color-focus automatically. */
   :focus-visible {
     outline: 2px solid var(--color-focus);
     outline-offset: 3px;

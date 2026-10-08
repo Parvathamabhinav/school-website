@@ -1,8 +1,10 @@
 import type { Viewport } from "next";
 import { SkipLink } from "@/components/layout/SkipLink";
 import { LazySmoothScroll } from "@/components/layout/LazySmoothScroll";
+import { AnnouncementBar } from "@/components/navigation/AnnouncementBar";
+import { Navbar } from "@/components/navigation/Navbar";
 import { siteConfig } from "@/config/site";
-import { getBrandCssVariables } from "@/config/theme";
+import { getThemeCssVariables } from "@/config/theme";
 import { school } from "@/data/school";
 import { rootMetadata } from "@/lib/seo/metadata";
 import { bodyFont, displayFont } from "./fonts";
@@ -19,10 +21,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={siteConfig.language}
       className={`${displayFont.variable} ${bodyFont.variable}`}
-      style={getBrandCssVariables(school.brand.colors)}
+      style={getThemeCssVariables(school.brand.colors)}
     >
       <body>
         <SkipLink />
+        <AnnouncementBar announcement={school.announcement} />
+        <Navbar />
         {children}
         {siteConfig.features.smoothScroll && <LazySmoothScroll />}
       </body>

@@ -12,12 +12,6 @@ export const school: School = {
   tagline: "A place for curious minds.",
   establishedYear: 1965,
   brand: {
-    logo: {
-      src: "/icons/logo-placeholder.svg",
-      alt: "Example Academy",
-      width: 160,
-      height: 40,
-    },
     favicon: "/icons/favicon.svg",
     colors: {
       primary: "#10263D", // Deep Ink Navy
@@ -45,6 +39,12 @@ export const school: School = {
   seo: {
     description:
       "Example Academy is an independent school committed to academic excellence and character.",
+  },
+  announcement: {
+    enabled: true,
+    text: "Admissions for the 2027–28 academic year are now open.",
+    href: "/admissions",
+    linkLabel: "Find out more",
   },
   hero: {
     title: "A place for curious minds.",
