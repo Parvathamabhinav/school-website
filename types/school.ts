@@ -27,6 +27,7 @@ export interface School {
   programs: AcademicProgram[];
   facilities: Facility[];
   achievements?: AchievementsContent;
+  studentLife?: StudentLifeContent;
   testimonials: Testimonial[];
   events: SchoolEvent[];
   gallery: GalleryItem[];
@@ -286,6 +287,30 @@ export interface AchievementItem {
   year?: string;
   /** Supporting photograph (landscape); falls back to the section media. */
   media?: EditorialMedia;
+}
+
+/** "Beyond the classroom": the people and moments that make up school life. */
+export interface StudentLifeContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  /**
+   * Shown as an editorial collage, in order: a large lead photograph, a
+   * tall portrait, then smaller supporting photographs. Three or four read
+   * best; any number is supported.
+   */
+  moments: StudentLifeMoment[];
+}
+
+export interface StudentLifeMoment {
+  /** Stable, URL-safe identifier, unique within the section. */
+  id: string;
+  /** Short label, e.g. "Community", "Sport & outdoors". */
+  category?: string;
+  title: string;
+  description?: string;
+  /** Cropped to its place in the collage; set focalPoint to keep faces in frame. */
+  media: EditorialMedia;
 }
 
 export interface Testimonial {

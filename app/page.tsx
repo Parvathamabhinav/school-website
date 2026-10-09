@@ -5,6 +5,7 @@ import { CampusSection } from "@/components/sections/CampusSection";
 import { ImpactSection } from "@/components/sections/ImpactSection";
 import { LearningSection } from "@/components/sections/LearningSection";
 import { SchoolStorySection } from "@/components/sections/SchoolStorySection";
+import { StudentLifeSection } from "@/components/sections/StudentLifeSection";
 import { school } from "@/data/school";
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
       {school.learning && <LearningSection data={school.learning} />}
       {school.campus && <CampusSection data={school.campus} />}
       {school.achievements && <AchievementsSection data={school.achievements} />}
+      {school.studentLife && <StudentLifeSection data={school.studentLife} />}
     </main>
   );
 }

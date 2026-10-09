@@ -212,6 +212,45 @@ export const school: School = {
       },
     ],
   },
+  // DEVELOPMENT CONTENT: generic copy and stock photography, not claims
+  // about any real school. Replace with the school's own moments and
+  // photographs (see data/development-photography.ts).
+  studentLife: {
+    eyebrow: "Beyond the classroom",
+    title: "A place to grow, discover, and belong.",
+    description:
+      "The moments between lessons matter too. Shared experiences help students build confidence, friendships, curiosity, and a lasting sense of community.",
+    moments: [
+      {
+        id: "community",
+        category: "Community",
+        title: "Friendships that last",
+        description: "Time shared between lessons builds the trust, kindness and belonging students carry with them.",
+        media: { image: photo.friendsCourtyard, focalPoint: "55% 45%", mobileFocalPoint: "60% 40%" },
+      },
+      {
+        id: "sport-outdoors",
+        category: "Sport & outdoors",
+        title: "Energy, teamwork and fresh air",
+        description: "On the pitch and outdoors, students learn to commit to a team, compete fairly and try again.",
+        media: { image: photo.footballMatch, focalPoint: "60% 50%" },
+      },
+      {
+        id: "collaboration",
+        category: "Collaboration",
+        title: "Ideas, shared and stretched",
+        description: "Working together, students learn to listen, question one another and build something better.",
+        media: { image: photo.groupProject, focalPoint: "50% 40%" },
+      },
+      {
+        id: "creative-exploration",
+        category: "Creative exploration",
+        title: "Room to make and imagine",
+        description: "Studios and rehearsals give students space to experiment, take creative risks and find their voice.",
+        media: { image: photo.paintingStudio, focalPoint: "35% 45%" },
+      },
+    ],
+  },
   programs: [],
   facilities: [],
   testimonials: [],

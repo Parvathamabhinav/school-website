@@ -56,4 +56,40 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAADQAQCdASoQAAsAA4BaJQBOgBa4ZfPVUAD+9YEoQfBpPQVGaXF+aVGIx7kr5x7KPLIipiF8WK5adVwMH6lReez7U296WU+iezHGG38PmnYcq625GVyUMd/KSYp3/VzbBOWM9Tppo6pZXpK3Do8Ml5xy2ktAAA==",
     credit: unsplash("Samuel Sianipar", "4TNd3hsW3PM"),
   },
+  friendsCourtyard: {
+    src: "/images/development/student-life/friends-courtyard.webp",
+    alt: "Four students in school uniform talking together beside a column in a sunlit school courtyard",
+    width: 2000,
+    height: 1635,
+    blurDataURL:
+      "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAABQAgCdASoQAA0AA4BaJZACdAYvrgcGn4vcw7AA/epB9tB+dYkgnud4imBr+bUCwxtuY6GAhhr471T4qGgz8B/9LIs115UlHNdY54SxvTcuoYBDgJiDMFAuxF9wq6IbWERzxXkvR97f0z+mIAA=",
+    credit: unsplash("Trần Văn Sơn", "Nr2iTbrEIFc"),
+  },
+  footballMatch: {
+    src: "/images/development/student-life/football-match.webp",
+    alt: "Two pupils competing for the ball during a football match on a grass pitch",
+    width: 1200,
+    height: 1795,
+    blurDataURL:
+      "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAACwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JQBYdg8duBeP9NEDpYAD8Jo9uO3ck3FgSa3yd1G+7MeckHsn8jmems1XJTVivv/OSb/FoPw2n8F5X27njYXF6OVcCbzbvQUC+b0vfkYJya2rcTUXcfVXKqEpK4P3eevAvis2uvsPVk6IAAAA=",
+    credit: unsplash("Emilio Geremia", "7NlTUtJutUU"),
+  },
+  groupProject: {
+    src: "/images/development/student-life/group-project.webp",
+    alt: "A group of students gathered around a laptop, working through a project together",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAQCdASoQAAkAA4BaJZACdADpJNyn+AD9aaW/THjQfY0vqJtOnz4JNROS3HONwQ7HVXumUrM3eChBgsjxNn/tfa1V1wTjTEMz0H/1FDUFXJ9ejmEXzAAA",
+    credit: unsplash("Vitaly Gariev", "EA0-iajPYFE"),
+  },
+  paintingStudio: {
+    src: "/images/development/student-life/painting-studio.webp",
+    alt: "A student painting at an easel while a teacher offers guidance in an art studio",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACQAQCdASoQAAkAA4BaJZwC7ABf5EgA/u+RTLYnvvtRAxttfGBmAcBBYFOTG5sGbPPndBZ13Fuvw9UHVMduGGZJUcfHK76Of7uj+x71qHAKYbAH8AAAAA==",
+    credit: unsplash("Vitaly Gariev", "120NQoMNpeA"),
+  },
 } satisfies Record<string, ImageAsset>;
