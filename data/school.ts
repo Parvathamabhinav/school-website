@@ -251,6 +251,16 @@ export const school: School = {
       },
     ],
   },
+  // DEVELOPMENT CONTENT. /admissions and /contact are planned routes (the
+  // same ones the navigation uses); neither page exists yet.
+  admissionsCta: {
+    eyebrow: "Your next chapter",
+    title: "A great journey begins with a conversation.",
+    description:
+      "Discover a learning community where every student is encouraged to grow, explore, and find their potential.",
+    primaryAction: { label: "Explore admissions", href: "/admissions" },
+    secondaryAction: { label: "Arrange a visit", href: "/contact" },
+  },
   programs: [],
   facilities: [],
   testimonials: [],

@@ -28,6 +28,7 @@ export interface School {
   facilities: Facility[];
   achievements?: AchievementsContent;
   studentLife?: StudentLifeContent;
+  admissionsCta?: AdmissionsCtaContent;
   testimonials: Testimonial[];
   events: SchoolEvent[];
   gallery: GalleryItem[];
@@ -311,6 +312,17 @@ export interface StudentLifeMoment {
   description?: string;
   /** Cropped to its place in the collage; set focalPoint to keep faces in frame. */
   media: EditorialMedia;
+}
+
+/** The homepage's closing call to action: the next step towards joining. */
+export interface AdmissionsCtaContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  /** The one main action, e.g. the admissions page. */
+  primaryAction: LinkAction;
+  /** A quieter alternative, e.g. arranging a visit. */
+  secondaryAction?: LinkAction;
 }
 
 export interface Testimonial {
