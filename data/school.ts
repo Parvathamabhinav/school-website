@@ -417,6 +417,79 @@ export const school: School = {
       },
     },
   },
+  // DEVELOPMENT CONTENT for /about: illustrative copy and stock photography,
+  // not any real school's history, philosophy or values. Replace with the
+  // school's own account; add story.milestones only once verified.
+  about: {
+    seo: {
+      title: "About",
+      description: "The ideas, values and community that shape our school, and how we approach learning.",
+    },
+    hero: {
+      eyebrow: "About our school",
+      title: "Education that helps every student grow.",
+      description: "Discover the ideas, relationships, and everyday experiences that shape our learning community.",
+      media: { image: photo.readingLibrary, focalPoint: "35% 38%" },
+    },
+    story: {
+      eyebrow: "Our story",
+      title: "A school shaped by its people.",
+      paragraphs: [
+        "Every school is shaped by the people who learn, teach and belong to it. Ours is a community where students are known, encouraged and given room to become themselves.",
+        "Teachers take time to understand each learner. Families are welcomed as partners. Across classrooms, corridors and playing fields, everyday moments add up to an education that lasts.",
+        "As the school grows, it holds on to what matters most: curiosity, high expectations and genuine care for one another.",
+      ],
+      media: { image: photo.classroomPupils, focalPoint: "45% 40%" },
+      note: "Illustrative story for development. Replace with the school's own history and identity.",
+    },
+    philosophy: {
+      eyebrow: "Our approach",
+      statement: "Learning is deepest when students are curious, challenged and supported.",
+      paragraphs: [
+        "We want students to understand ideas, not just remember them. Lessons invite questions, discussion and practice, so that knowledge becomes something students can use.",
+        "High expectations go hand in hand with support. Students are stretched when they are ready and helped when they are not, so that each can make real progress.",
+        "Learning does not stop at the classroom door. Creative work, sport, service and friendship all help students grow in confidence and character.",
+      ],
+      media: { image: photo.earlyYearsTable, focalPoint: "55% 50%" },
+      note: "Illustrative approach for development. Replace with the school's own educational philosophy.",
+    },
+    values: {
+      eyebrow: "What we value",
+      title: "Values you can see in everyday school life.",
+      description: "Our values guide how we learn, how we treat one another and how we take part in the wider world.",
+      items: [
+        {
+          id: "curiosity",
+          title: "Curiosity",
+          description: "Asking questions, exploring ideas and enjoying the work of finding things out.",
+        },
+        {
+          id: "rigour",
+          title: "Rigour",
+          description: "Taking learning seriously: careful thinking, honest effort and pride in work done well.",
+        },
+        {
+          id: "care",
+          title: "Care",
+          description: "Kindness, respect and attention to each person, so that everyone can feel they belong.",
+        },
+        {
+          id: "community",
+          title: "Community",
+          description: "Learning with and from others, and contributing to the life of the school and beyond.",
+        },
+      ],
+      media: { image: photo.playground, focalPoint: "45% 45%" },
+      note: "Illustrative values for development. Replace with the school's own.",
+    },
+    closing: {
+      title: "Come and see for yourself.",
+      description:
+        "The best way to understand a school is to meet its people. Find out how admissions work, or get in touch with any question.",
+      primaryAction: { label: "Explore admissions", href: "/admissions" },
+      secondaryAction: { label: "Contact us", href: "/contact" },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],

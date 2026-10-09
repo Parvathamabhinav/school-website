@@ -209,4 +209,40 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAgCdASoQABAAA4BaJZQCxC8AGZ/hip9muvMgAP2ao7ECpYOV8VFp/sMhOYDI4c9rIcVdePO8x1Gmni5sLNx/ghzpL3jkZs+Gb1Za7aydt5Di2drEbdGn7QAAAA==",
     credit: unsplash("Brelyn Bashrum", "MUiv880yORo"),
   },
+  readingLibrary: {
+    src: "/images/development/about/reading-library.webp",
+    alt: "A young boy reading a large picture book at a table in a library",
+    width: 2400,
+    height: 1600,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQAgCdASoQAAsAA4BaJbACdAED+ZG5R0gAAP7RRKyX8LTvR/XpSuIqf1Bbh6d2KIlfLF2w6/v7fgvKszfl/E+ktvb6JUv8mOw8vxzLU6oTf7+tUbzGgAAA",
+    credit: unsplash("Anita Jankovic", "162ppyjclxM"),
+  },
+  classroomPupils: {
+    src: "/images/development/about/classroom-pupils.webp",
+    alt: "Pupils in school uniform at their desks in a classroom, one girl standing and smiling",
+    width: 1400,
+    height: 1750,
+    blurDataURL:
+      "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAACwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZgC7G1/DyLIZ8LsUb3aFrVy0LmcAAP7jEmUhqlTC7Sd/pZogeiGWED6EUaH58ohX5nu7pW3Kro7pXoHmRfzhYR172B4NKc09w1E8OHAaBE4MI6orfhly578f5dF8Cqf2pt374mWxN49HfFKKMfmCN+Ftok7GhQGgnLGQiaDwPsO7wAA=",
+    credit: unsplash("Sushanta Rokka", "LYL31WBHynQ"),
+  },
+  earlyYearsTable: {
+    src: "/images/development/about/early-years-table.webp",
+    alt: "Young children sitting around a small classroom table, one raising a hand",
+    width: 1400,
+    height: 1750,
+    blurDataURL:
+      "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBACdASoQABQAPu1iqU2ppaOiMAgBMB2JZgCdMoAlwRes5EWos32QXdM0AAD+6sgcTvuPmD94ACgthq+f/leJqPR7LazstXokAAx+bobrLvRiPqb6y3F2p75swbk3tRsC8Cl1DRzSAsOGt6ZVKRCkEIpNHwWtv195CZauT+AJgtYqZeDJJpiNgEotECLYgQ8AAA==",
+    credit: unsplash("Anna Zwiefel", "eg63-okc-yg"),
+  },
+  playground: {
+    src: "/images/development/about/playground.webp",
+    alt: "Children climbing a rope frame together in a playground while an adult looks on",
+    width: 1400,
+    height: 1750,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQDE2Bh49eUlkAD+p4Jj6RNDy1S0oKZgmekLCm/dGFnfUBcKujq+KQL/HFEzPVY794dRvyOm1c9984oRVG/6aSAwDpLAV+h8pEWn1hgAAA==",
+    credit: unsplash("Ahmet Yüksek", "-NuteFHjL3s"),
+  },
 } satisfies Record<string, ImageAsset>;

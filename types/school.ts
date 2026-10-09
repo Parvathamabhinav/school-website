@@ -36,6 +36,7 @@ export interface School {
   videos: VideoAsset[];
   admissions?: AdmissionsPageContent;
   contactPage?: ContactPageContent;
+  about?: AboutPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -65,6 +66,69 @@ export interface SchoolBrand {
   /** Path to the favicon under /public. */
   favicon: string;
   colors: BrandPalette;
+}
+
+/* ---------------------------------------------------------------- About -- */
+
+/**
+ * The /about page. Everything here is the school's own account of itself:
+ * publish only what the school confirms, and use each section's `note` to
+ * label illustrative development copy.
+ */
+export interface AboutPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** Wide photograph; phones crop it to portrait. */
+    media: EditorialMedia;
+  };
+  /** Rendered at #story (linked from the homepage). */
+  story: {
+    eyebrow?: string;
+    title: string;
+    /** The first paragraph is set larger, as the lead. */
+    paragraphs: string[];
+    /** Portrait photograph. */
+    media: EditorialMedia;
+    /** Verified milestones only; omit rather than estimate. */
+    milestones?: { year: string; text: string }[];
+    note?: string;
+  };
+  philosophy: {
+    eyebrow?: string;
+    /** One sentence summing up the approach; the section heading. */
+    statement: string;
+    paragraphs: string[];
+    /** Portrait photograph. */
+    media?: EditorialMedia;
+    note?: string;
+  };
+  values: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** Three to five read best. */
+    items: SchoolValue[];
+    /** Portrait photograph. */
+    media?: EditorialMedia;
+    note?: string;
+  };
+  closing: {
+    title: string;
+    description?: string;
+    primaryAction: LinkAction;
+    secondaryAction?: LinkAction;
+  };
+}
+
+export interface SchoolValue {
+  /** Stable, URL-safe identifier, unique within the list. */
+  id: string;
+  title: string;
+  description: string;
 }
 
 /* -------------------------------------------------------------- Contact -- */
