@@ -1,6 +1,5 @@
 import type { School } from "@/types/school";
 import { developmentPhotography as photo } from "./development-photography";
-import { placeholderLandscape, placeholderLandscapeSet, placeholderPortrait } from "./placeholders";
 
 const establishedYear = 1965;
 
@@ -59,11 +58,8 @@ export const school: School = {
     media: {
       // Supply photography close to the desktop portrait crop (4:5): cover
       // crops scale to fill, so a much wider source would be upscaled.
-      image: {
-        ...placeholderPortrait,
-        alt: "Placeholder for a photograph of the school campus",
-      },
-      focalPoint: "50% 60%",
+      image: photo.libraryStudy,
+      focalPoint: "40% 60%",
     },
     meta: [`Est. ${establishedYear}`, "Curiosity · Rigour · Care"],
   },
@@ -89,17 +85,10 @@ export const school: School = {
     body: "We create an environment where students are encouraged to think deeply, discover confidently and grow into capable, thoughtful people.",
     link: { label: "Discover our story", href: "/about" },
     media: {
-      image: {
-        ...placeholderLandscape,
-        alt: "Placeholder for a photograph of students and teachers together",
-      },
+      image: photo.campusWalk,
       // Phones crop to portrait, so give them a portrait source.
-      mobileImage: {
-        ...placeholderPortrait,
-        alt: "Placeholder for a photograph of students and teachers together",
-      },
-      focalPoint: "70% 55%",
-      caption: "Placeholder image: replace with school photography.",
+      mobileImage: photo.campusWalkPortrait,
+      focalPoint: "50% 60%",
     },
   },
   // DEVELOPMENT PLACEHOLDERS: illustrative principles, not an official
@@ -114,30 +103,30 @@ export const school: School = {
         id: "discover",
         title: "Discover",
         description: "Students learn to observe, question and explore beyond the obvious.",
-        media: { image: { ...placeholderLandscapeSet[0], alt: "Placeholder for a photograph of students exploring" } },
+        media: { image: photo.microscope, focalPoint: "60% 40%" },
       },
       {
         id: "think",
         title: "Think",
         description: "Learning becomes deeper when students connect ideas and reason independently.",
-        media: { image: { ...placeholderLandscapeSet[1], alt: "Placeholder for a photograph of a seminar discussion" } },
+        media: { image: photo.classDiscussion, focalPoint: "60% 50%" },
       },
       {
         id: "create",
         title: "Create",
         description: "Students turn knowledge into ideas, projects and meaningful work.",
-        media: { image: { ...placeholderLandscapeSet[2], alt: "Placeholder for a photograph of students making something" } },
+        media: { image: photo.designMaking },
       },
       {
         id: "lead",
         title: "Lead",
         description: "Confidence grows through responsibility, collaboration and purposeful action.",
-        media: { image: { ...placeholderLandscapeSet[3], alt: "Placeholder for a photograph of students leading an activity" } },
+        media: { image: photo.classroomCollaboration, focalPoint: "45% 55%" },
       },
     ],
   },
-  // DEVELOPMENT PLACEHOLDERS: illustrative spaces, not claims about any real
-  // campus. Replace copy, captions and imagery with the school's own.
+  // DEVELOPMENT CONTENT: illustrative spaces and stock photography, not
+  // claims about any real campus. Replace copy, captions and imagery.
   campus: {
     eyebrow: "Life on campus",
     title: "Spaces designed for discovery.",
@@ -147,29 +136,29 @@ export const school: School = {
         id: "learning-spaces",
         title: "Learning Spaces",
         description: "Thoughtfully designed environments that give students room to focus, question and explore.",
-        media: { image: { ...placeholderLandscapeSet[0], alt: "Placeholder for a photograph of a classroom" } },
-        caption: "Placeholder · Classroom",
+        media: { image: photo.classroom },
+        caption: "Classroom",
       },
       {
         id: "science-innovation",
         title: "Science & Innovation",
         description: "Spaces where ideas move from curiosity to experimentation.",
-        media: { image: { ...placeholderLandscapeSet[2], alt: "Placeholder for a photograph of a science laboratory" } },
-        caption: "Placeholder · Science laboratory",
+        media: { image: photo.laboratory },
+        caption: "Science laboratory",
       },
       {
         id: "sport-wellbeing",
         title: "Sport & Wellbeing",
         description: "Room to build confidence, discipline and a healthy sense of competition.",
-        media: { image: { ...placeholderLandscapeSet[1], alt: "Placeholder for a photograph of the sports grounds" } },
-        caption: "Placeholder · Sports grounds",
+        media: { image: photo.sportsField, focalPoint: "50% 40%" },
+        caption: "Sports grounds",
       },
       {
         id: "arts-expression",
         title: "Arts & Expression",
         description: "Creative spaces where students discover new ways to communicate and imagine.",
-        media: { image: { ...placeholderLandscapeSet[3], alt: "Placeholder for a photograph of an art studio" } },
-        caption: "Placeholder · Art studio",
+        media: { image: photo.artStudio },
+        caption: "Art studio",
       },
     ],
   },

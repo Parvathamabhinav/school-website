@@ -92,4 +92,103 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACQAQCdASoQAAkAA4BaJZwC7ABf5EgA/u+RTLYnvvtRAxttfGBmAcBBYFOTG5sGbPPndBZ13Fuvw9UHVMduGGZJUcfHK76Of7uj+x71qHAKYbAH8AAAAA==",
     credit: unsplash("Vitaly Gariev", "120NQoMNpeA"),
   },
+  libraryStudy: {
+    src: "/images/development/hero/library-study.webp",
+    alt: "A student studying at a long desk in a library lined with bookshelves",
+    width: 1600,
+    height: 1600,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQABAAA4BaJbACdAEORej15VnAAP55BpQUN42X1agnN9SLf/f24D1TsneZLmEPASbwP7fZmtq6sWV/J2fZg573IfPnILnlR2SSXxfpwX6FVjYu0t+1zBbwjPf7nXLIxGkN8la8Uz2AAAAA",
+    credit: unsplash("Zoshua Colah", "klbApl9mxr0"),
+  },
+  campusWalk: {
+    src: "/images/development/story/campus-walk.webp",
+    alt: "Students walking and cycling past an ivy-covered stone school building",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAADQAQCdASoQAAsAA4BaJbACdACjfFvcAADOOm/ubrcIlhqiVarAHWmd4ocAlBYJqqqxl/2v4cM6ptVFbYXO0fxjiwnhKAXrSCt9dJFX5Ph8TAT86sDXxXmX4p+8TXDS4YmFBQAA",
+    credit: unsplash("Joss Broward", "ev3Xqhr_0pI"),
+  },
+  campusWalkPortrait: {
+    src: "/images/development/story/campus-walk-portrait.webp",
+    alt: "Students walking and cycling past an ivy-covered stone school building",
+    width: 1200,
+    height: 1500,
+    blurDataURL:
+      "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JbACdMoADaxX/VIUaSKUAAPZPJH+Pa0xXfTkSBTbTkA14hpBKRvxuq3vdI7MeHvLbczTZJRpbNeyIDjnByNmSlIRvFvRj2CGJyNOmTzTWli19ra3+5wO4yHp9wHCyP/hh/fHjAnwAAA==",
+    credit: unsplash("Joss Broward", "ev3Xqhr_0pI"),
+  },
+  microscope: {
+    src: "/images/development/learning/microscope.webp",
+    alt: "A young student looking closely through a microscope",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAADQAQCdASoQAAsAA4BaJQBOgCK1S8ByAAD+9CtKPhbI+izaMzhzZoXzUyxHAvzTOJorMjXkOFWPZaIgNEAeGWumijVPjOS3eKyR3lNI+qY2QnfYDvWyzpKwfTAw4AAA",
+    credit: unsplash("Anna Khromova", "ttJsGr4fF2A"),
+  },
+  classDiscussion: {
+    src: "/images/development/learning/class-discussion.webp",
+    alt: "A teacher leading a lively discussion with students seated at desks",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAAkAA4BaJZACdAYtVbStFuSPfAD+6HyooqAAYCXS+e11/MaU+MrJaxRDVo/Yh1vFU8ihktFMIQpp5zEtIak45CKQeVMMQIW7gbbOd5CuAAAA",
+    credit: unsplash("Vitaly Gariev", "RDf6Cvns88Q"),
+  },
+  designMaking: {
+    src: "/images/development/learning/design-making.webp",
+    alt: "A 3D printer beside a laptop and printed models, including a terrain map and a gear",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAACwAgCdASoQAAsAA4BaJZQC7H8AgqjLktstLWG76qAA/u2NRWZ1eCQlzJuX2AUF+k1/Etel+/APq6HZzxNLz1B5h2H02ETJ8F0wvfv6At7sti2iDK56+4ZlM/x27HSD8iNvLwIzbbNFVSEf02g26geyATZgAA==",
+    credit: unsplash("ZMorph All-in-One 3D Printers", "FB1vd3XT_zQ"),
+  },
+  classroomCollaboration: {
+    src: "/images/development/learning/classroom-collaboration.webp",
+    alt: "Students gathered around shared tables in a busy, colourful classroom",
+    width: 2000,
+    height: 1245,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAwAgCdASoQAAoAA4BaJZQCw7EVcbhpPmLZwAD5LG2xHnPANxV/S8gvkrnwuXEUCnsFEPk4I8xtL/SjxBlUGNLTDvlH7bHeQcGUkXaWgNAAAA==",
+    credit: unsplash("Quilia", "zFSo6bnZJTw"),
+  },
+  classroom: {
+    src: "/images/development/campus/classroom.webp",
+    alt: "A sunlit classroom with wooden desks and tall windows",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAAAwAgCdASoQAAsAA4BaJQBOgMXwyXnH460+AADOPU4lr66YKoLeuidmUzhHehqscB0YeeQSKa0CfTj/bPaSvKM6YX/MZjOu7AnmH6bIGgwf34QXoMKudV+o/aJByXwXfzy4t01bVgQAAA==",
+    credit: unsplash("2y.kang", "dFohf_GUZJ0"),
+  },
+  laboratory: {
+    src: "/images/development/campus/laboratory.webp",
+    alt: "A science laboratory bench with glassware, samples and equipment",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAwAgCdASoQAAsAA4BaJYwC7ADcqgn0q49DAAD5d2pZL1fAhjimb+F0ywzW9mbDAbtUzMnwk1hETtgM2lybqrRuAjcqdppHNxfjxkbW9ddfS8HgAAA=",
+    credit: unsplash("Adam Bezer", "z_w9KovAwYk"),
+  },
+  sportsField: {
+    src: "/images/development/campus/sports-field.webp",
+    alt: "An athletics track and playing field with students training in the distance",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoQAAsAA4BaJagCdAD0OpNtkCgA/liWZP9Y841dtLJQub4UqnBpvTwgEKPh2qPLw8wJACW3FrPU/lmnqFKdY7BZt3P87AAA",
+    credit: unsplash("Sincerely Media", "5lmm-rZ207I"),
+  },
+  artStudio: {
+    src: "/images/development/campus/art-studio.webp",
+    alt: "A bright art studio with wooden easels and stools",
+    width: 2000,
+    height: 1338,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJZACdADcYs8AZNcAAP5rLC+Nn0RDMi20FcZxvl/WrbQ+ZzhhyL9S+qiDmD2ip2fBxrUfIbfgpW6NlpfGguwwJtAAAA==",
+    credit: unsplash("Cat Guffin", "0Ip-dmYYIcI"),
+  },
 } satisfies Record<string, ImageAsset>;
