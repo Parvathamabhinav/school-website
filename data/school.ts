@@ -135,6 +135,43 @@ export const school: School = {
       },
     ],
   },
+  // DEVELOPMENT PLACEHOLDERS: illustrative spaces, not claims about any real
+  // campus. Replace copy, captions and imagery with the school's own.
+  campus: {
+    eyebrow: "Life on campus",
+    title: "Spaces designed for discovery.",
+    description: "The environments around us shape the way we learn, connect and grow.",
+    experiences: [
+      {
+        id: "learning-spaces",
+        title: "Learning Spaces",
+        description: "Thoughtfully designed environments that give students room to focus, question and explore.",
+        media: { image: { ...placeholderLandscapeSet[0], alt: "Placeholder for a photograph of a classroom" } },
+        caption: "Placeholder · Classroom",
+      },
+      {
+        id: "science-innovation",
+        title: "Science & Innovation",
+        description: "Spaces where ideas move from curiosity to experimentation.",
+        media: { image: { ...placeholderLandscapeSet[2], alt: "Placeholder for a photograph of a science laboratory" } },
+        caption: "Placeholder · Science laboratory",
+      },
+      {
+        id: "sport-wellbeing",
+        title: "Sport & Wellbeing",
+        description: "Room to build confidence, discipline and a healthy sense of competition.",
+        media: { image: { ...placeholderLandscapeSet[1], alt: "Placeholder for a photograph of the sports grounds" } },
+        caption: "Placeholder · Sports grounds",
+      },
+      {
+        id: "arts-expression",
+        title: "Arts & Expression",
+        description: "Creative spaces where students discover new ways to communicate and imagine.",
+        media: { image: { ...placeholderLandscapeSet[3], alt: "Placeholder for a photograph of an art studio" } },
+        caption: "Placeholder · Art studio",
+      },
+    ],
+  },
   programs: [],
   facilities: [],
   achievements: [],

@@ -22,6 +22,7 @@ export interface School {
   impact?: ImpactContent;
   story?: StoryContent;
   learning?: LearningContent;
+  campus?: CampusContent;
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
   facilities: Facility[];
@@ -213,6 +214,30 @@ export interface LearningPrinciple {
   description: string;
   /** Landscape (3:2) photography suits every layout this is shown in. */
   media: EditorialMedia;
+}
+
+/** "Where it happens": the places that make up the school experience. */
+export interface CampusContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  /** Three to six read best; any number is supported. */
+  experiences: CampusExperience[];
+  /** Crop of the large desktop media frame. Defaults to "landscape". */
+  aspectRatio?: AspectRatio;
+}
+
+export interface CampusExperience {
+  /** Stable, URL-safe identifier, unique within the section. */
+  id: string;
+  /** Display number; defaults to the position ("01", "02", …). */
+  number?: string;
+  title: string;
+  description: string;
+  /** Landscape photography suits every layout this is shown in. */
+  media: EditorialMedia;
+  /** Small caption for the photograph, e.g. "Science laboratory". */
+  caption?: string;
 }
 
 export interface PrincipalMessage {

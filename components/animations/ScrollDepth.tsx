@@ -8,6 +8,12 @@ interface ScrollDepthProps {
   children: ReactNode;
   /** Maximum drift in percent of the image height, each way. */
   amount?: number;
+  /**
+   * Element to drift, as a selector within the wrapper. Defaults to the
+   * image; point it at a wrapper when the image itself is animated by
+   * something else (e.g. a stack of switchable images).
+   */
+  target?: string;
   className?: string;
 }
 
@@ -19,13 +25,13 @@ interface ScrollDepthProps {
  * Wrap a ResponsiveImage that has an aspectRatio (the frame clips the
  * overscan). Skipped entirely under reduced motion.
  */
-export function ScrollDepth({ children, amount = 4, className }: ScrollDepthProps) {
+export function ScrollDepth({ children, amount = 4, target = "picture, img", className }: ScrollDepthProps) {
   const ref = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
       const element = ref.current;
-      const image = element?.querySelector("picture, img");
+      const image = element?.querySelector(target);
       if (!element || !image) return;
 
       const mm = gsap.matchMedia();
