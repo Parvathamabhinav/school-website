@@ -1,4 +1,5 @@
 import type { School } from "@/types/school";
+import { developmentPhotography as photo } from "./development-photography";
 import { placeholderLandscape, placeholderLandscapeSet, placeholderPortrait } from "./placeholders";
 
 const establishedYear = 1965;
@@ -172,9 +173,47 @@ export const school: School = {
       },
     ],
   },
+  // DEVELOPMENT CONTENT: generic statements and stock photography, not claims
+  // about any real school. Replace with the school's own achievements and
+  // photographs (see data/development-photography.ts).
+  achievements: {
+    eyebrow: "Excellence in action",
+    title: "Ambition becomes achievement.",
+    description:
+      "We encourage students to pursue ideas deeply, challenge themselves boldly and take pride in the work they create.",
+    media: { image: photo.graduation, focalPoint: "45% 45%" },
+    items: [
+      {
+        id: "academic",
+        category: "Academic excellence",
+        title: "Rigour, pursued with confidence",
+        description: "Students are encouraged to pursue rigorous academic goals with confidence.",
+      },
+      {
+        id: "innovation",
+        category: "Innovation",
+        title: "Ideas given room to become real",
+        description: "From experiments to original projects, ideas are given room to become real.",
+        media: { image: photo.scienceExperiment, focalPoint: "55% 50%" },
+      },
+      {
+        id: "sport",
+        category: "Sport",
+        title: "Competition that builds character",
+        description: "Competition becomes an opportunity to build discipline, resilience and teamwork.",
+        media: { image: photo.schoolAthletics, focalPoint: "60% 50%" },
+      },
+      {
+        id: "creative-arts",
+        category: "Creative arts",
+        title: "New ways to express ideas",
+        description: "Students discover new ways to express ideas, imagination and identity.",
+        media: { image: photo.studentOrchestra, focalPoint: "50% 40%" },
+      },
+    ],
+  },
   programs: [],
   facilities: [],
-  achievements: [],
   testimonials: [],
   events: [],
   gallery: [],

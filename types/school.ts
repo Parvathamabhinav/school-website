@@ -26,7 +26,7 @@ export interface School {
   principal?: PrincipalMessage;
   programs: AcademicProgram[];
   facilities: Facility[];
-  achievements: Achievement[];
+  achievements?: AchievementsContent;
   testimonials: Testimonial[];
   events: SchoolEvent[];
   gallery: GalleryItem[];
@@ -263,13 +263,29 @@ export interface Facility {
   image?: ImageAsset;
 }
 
-export interface Achievement {
-  id: string;
+/** Evidence of excellence: a ledger of achievements beside a lead photograph. */
+export interface AchievementsContent {
+  eyebrow?: string;
   title: string;
-  year: number;
   description?: string;
-  /** Optional headline figure, e.g. "98%". */
-  metric?: string;
+  /** Lead photograph; also shown for any item without its own media. */
+  media: EditorialMedia;
+  /** Two to six read best; any number is supported. */
+  items: AchievementItem[];
+}
+
+export interface AchievementItem {
+  /** Stable, URL-safe identifier, unique within the section. */
+  id: string;
+  /** Free text, e.g. "Academic", "Innovation", "University placement". */
+  category: string;
+  title: string;
+  description?: string;
+  /** e.g. "National finalist". Only verified facts. */
+  result?: string;
+  year?: string;
+  /** Supporting photograph (landscape); falls back to the section media. */
+  media?: EditorialMedia;
 }
 
 export interface Testimonial {

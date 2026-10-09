@@ -18,6 +18,8 @@ export interface ImageAsset {
   height: number;
   /** Optional low-quality placeholder (base64 data URL). */
   blurDataURL?: string;
+  /** Source and licence of third-party photography (kept with the asset). */
+  credit?: { author: string; source: string; url: string; license: string };
 }
 
 export interface VideoSource {
