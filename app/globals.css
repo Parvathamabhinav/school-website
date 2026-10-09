@@ -40,6 +40,9 @@
   --color-border: color-mix(in oklab, var(--brand-text) 16%, transparent);
   --color-border-strong: color-mix(in oklab, var(--brand-text) 42%, transparent);
 
+  /* Form validation. Always paired with a text message, never colour alone. */
+  --color-error: #9b2c1f;
+
   /* Interaction states for non-filled elements (ghost buttons, rows). */
   --color-overlay-hover: color-mix(in oklab, var(--brand-text) 5%, transparent);
   --color-overlay-active: color-mix(in oklab, var(--brand-text) 10%, transparent);
@@ -192,6 +195,7 @@
   --color-disabled: color-mix(in oklab, var(--brand-background) 12%, transparent);
   --color-on-disabled: color-mix(in oklab, var(--brand-background) 50%, transparent);
   --color-focus: var(--brand-accent);
+  --color-error: #f2a294;
   background-color: var(--color-background);
   color: var(--color-text);
 }

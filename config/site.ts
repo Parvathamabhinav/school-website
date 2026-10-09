@@ -15,7 +15,7 @@ export const siteConfig = {
    * Routes that exist and should be indexed (drives app/sitemap.ts). Kept
    * separate from navigation, which may point at pages not yet built.
    */
-  publishedRoutes: ["/"],
+  publishedRoutes: ["/", "/admissions", "/contact"],
   features: {
     /**
      * Lenis smooth scrolling. Off by default; when off, no Lenis code is

@@ -34,7 +34,8 @@ export interface School {
   events: SchoolEvent[];
   gallery: GalleryItem[];
   videos: VideoAsset[];
-  admissions?: AdmissionsInfo;
+  admissions?: AdmissionsPageContent;
+  contactPage?: ContactPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -363,8 +364,142 @@ export interface GalleryItem {
   category?: string;
 }
 
-export interface AdmissionsInfo {
-  summary: string;
-  steps: { title: string; description: string }[];
-  applicationUrl?: string;
+/* ----------------------------------------------------------- Admissions -- */
+
+/**
+ * The /admissions page. Contact details come from `school.contact`.
+ *
+ * Only publish facts the school has confirmed: steps, documents, dates and
+ * FAQ answers are policy. Optional lists render only when supplied.
+ */
+export interface AdmissionsPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: AdmissionsHeroContent;
+  process: AdmissionsProcessContent;
+  guidance?: AdmissionsGuidanceContent;
+  faq?: AdmissionsFaqContent;
+  enquiry: EnquiryContent;
+}
+
+export interface AdmissionsHeroContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  media: EditorialMedia;
+  /** Usually "#enquire" (the enquiry section on this page). */
+  primaryAction: LinkAction;
+  /** e.g. "#process". */
+  secondaryAction?: LinkAction;
+}
+
+export interface AdmissionsProcessContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  steps: AdmissionsStep[];
+  /** Small print under the steps, e.g. that they are illustrative. */
+  note?: string;
+}
+
+export interface AdmissionsStep {
+  /** Stable, URL-safe identifier, unique within the list. */
+  id: string;
+  title: string;
+  description: string;
+}
+
+/** "What parents need to know": short guidance plus any verified lists. */
+export interface AdmissionsGuidanceContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  /** Verified documents to prepare. Omit until the school confirms them. */
+  documents?: { title: string; items: string[] };
+  /** Verified dates or deadlines. Omit until the school confirms them. */
+  dates?: { title: string; items: { label: string; date: string }[] };
+  media?: EditorialMedia;
+}
+
+export interface AdmissionsFaqContent {
+  eyebrow?: string;
+  title: string;
+  items: FaqItem[];
+  note?: string;
+}
+
+export interface FaqItem {
+  /** Stable, URL-safe identifier, unique within the list. */
+  id: string;
+  question: string;
+  answer: string;
+}
+
+export interface EnquiryContent {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  form: EnquiryFormContent;
+}
+
+/** Content of an enquiry form; shared by the Admissions and Contact pages. */
+export interface EnquiryFormContent {
+  labels: {
+    name: string;
+    email: string;
+    phone: string;
+    /** With `gradeOptions`, shows an optional year-group select. */
+    grade?: string;
+    /** With `subjectOptions`, shows a required "what is this about" select. */
+    subject?: string;
+    message: string;
+    /** When set, a required consent checkbox with this label is shown. */
+    consent?: string;
+    submit: string;
+  };
+  gradeOptions?: string[];
+  subjectOptions?: string[];
+  /** Require a message (e.g. general enquiries, where it is the point). */
+  requireMessage?: boolean;
+  /** Heading of the confirmation; defaults to "Thank you". */
+  successTitle?: string;
+  /** Shown only after the delivery provider confirms the enquiry was received. */
+  successMessage: string;
+  /** Optional privacy statement; it must match the school's actual policy. */
+  privacyNote?: string;
+}
+
+/* -------------------------------------------------------------- Contact -- */
+
+/**
+ * The /contact page. Contact details, address and social links come from
+ * `school.contact`, `school.location` and `school.socialLinks`.
+ */
+export interface ContactPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** One optional, quiet action, e.g. to the form further down. */
+    action?: LinkAction;
+  };
+  details: {
+    /** Visually hidden heading for the contact directory. */
+    title: string;
+    labels: {
+      address: string;
+      phone: string;
+      email: string;
+      hours: string;
+      social: string;
+      admissions: string;
+    };
+    /** Shown only when `school.location.mapUrl` is set (a verified address). */
+    directionsLabel: string;
+    /** Where admissions questions should go, e.g. "/admissions#enquire". */
+    admissionsLink?: LinkAction;
+  };
+  enquiry: EnquiryContent;
 }

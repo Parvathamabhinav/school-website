@@ -191,4 +191,22 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJZACdADcYs8AZNcAAP5rLC+Nn0RDMi20FcZxvl/WrbQ+ZzhhyL9S+qiDmD2ip2fBxrUfIbfgpW6NlpfGguwwJtAAAA==",
     credit: unsplash("Cat Guffin", "0Ip-dmYYIcI"),
   },
+  welcomingClass: {
+    src: "/images/development/admissions/welcoming-class.webp",
+    alt: "A smiling teacher talking with a class of students seated at desks",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAkAA4BaJYgCsADicEjd9roAAP7m5T/fRG0pnkdXYXySx57tl42jRhdgdVQLMTrg8jRT+XT+GmtD3w1ungbR5LJwIEHmhfGiIlUthAR5iUG6aJTgAA==",
+    credit: unsplash("Vitaly Gariev", "14jNrPntbgk"),
+  },
+  campusArrival: {
+    src: "/images/development/admissions/campus-arrival.webp",
+    alt: "Students walking along a sunny path towards a stone archway on campus",
+    width: 1600,
+    height: 1602,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAgCdASoQABAAA4BaJZQCxC8AGZ/hip9muvMgAP2ao7ECpYOV8VFp/sMhOYDI4c9rIcVdePO8x1Gmni5sLNx/ghzpL3jkZs+Gb1Za7aydt5Di2drEbdGn7QAAAA==",
+    credit: unsplash("Brelyn Bashrum", "MUiv880yORo"),
+  },
 } satisfies Record<string, ImageAsset>;

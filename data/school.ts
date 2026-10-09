@@ -254,6 +254,169 @@ export const school: School = {
   footer: {
     description: "A place for curious minds to learn deeply, explore boldly and grow with purpose.",
   },
+  // DEVELOPMENT CONTENT for /admissions. The process, FAQ answers and year
+  // groups are illustrative, not any school's policy: replace them with the
+  // school's confirmed admissions information before launch. Add
+  // guidance.documents and guidance.dates only once verified.
+  admissions: {
+    seo: {
+      title: "Admissions",
+      description:
+        "Find out how admissions work, ask the admissions team a question and take the first step towards joining the school.",
+    },
+    hero: {
+      eyebrow: "Admissions",
+      title: "Begin your family's journey with us.",
+      description:
+        "We would love to get to know you. Find out how admissions work, ask us anything and take the first step whenever you are ready.",
+      media: { image: photo.welcomingClass, focalPoint: "45% 40%" },
+      primaryAction: { label: "Make an enquiry", href: "#enquire" },
+      secondaryAction: { label: "How admissions work", href: "#process" },
+    },
+    process: {
+      eyebrow: "The admissions journey",
+      title: "Five simple steps.",
+      description: "Every family's journey is a little different. The admissions team will guide you at each stage.",
+      steps: [
+        {
+          id: "enquire",
+          title: "Make an enquiry",
+          description: "Share a few details and the questions on your mind, using the form below or by contacting the school.",
+        },
+        {
+          id: "conversation",
+          title: "Speak with the school",
+          description: "A conversation with the admissions team about your child, your hopes and anything you would like to know.",
+        },
+        {
+          id: "visit",
+          title: "Visit and learn more",
+          description: "Ask about visiting the school to see learning in action and get a feel for everyday life.",
+        },
+        {
+          id: "apply",
+          title: "Follow the application instructions",
+          description: "The admissions team will explain how the school's application works and what it involves.",
+        },
+        {
+          id: "next-steps",
+          title: "Receive your next steps",
+          description: "You will hear from the admissions team about what happens next for your family.",
+        },
+      ],
+      note: "Illustrative process for development. Replace with the school's confirmed admissions procedure.",
+    },
+    guidance: {
+      eyebrow: "What parents need to know",
+      title: "Clear answers, from the people who know.",
+      description:
+        "Requirements, key dates and any documents needed can vary by year group and from year to year. Rather than guess, the admissions team will confirm everything that applies to your family.",
+      media: { image: photo.campusArrival, focalPoint: "35% 55%" },
+    },
+    faq: {
+      eyebrow: "Questions",
+      title: "Frequently asked questions.",
+      items: [
+        {
+          id: "when-to-apply",
+          question: "When can we apply?",
+          answer:
+            "Timings depend on the year group and the time of year. Make an enquiry and the admissions team will confirm what applies to your child.",
+        },
+        {
+          id: "year-groups",
+          question: "Which year groups have places available?",
+          answer:
+            "Availability changes from year to year. Tell us the year group you are interested in and the admissions team will let you know.",
+        },
+        {
+          id: "visits",
+          question: "Can we visit the school?",
+          answer: "Please ask about visits when you enquire. The admissions team will explain the options available.",
+        },
+        {
+          id: "after-enquiry",
+          question: "What happens after we make an enquiry?",
+          answer:
+            "A member of the admissions team will reply using the contact details you provide, to answer your questions and talk about next steps.",
+        },
+      ],
+      note: "Illustrative answers for development. Replace with the school's own.",
+    },
+    enquiry: {
+      eyebrow: "Make an enquiry",
+      title: "Start a conversation.",
+      description:
+        "Tell us a little about your family and what you would like to know. A member of the admissions team will reply.",
+      form: {
+        labels: {
+          name: "Parent or guardian name",
+          email: "Email address",
+          phone: "Phone number",
+          grade: "Year group of interest",
+          message: "Your message or question",
+          consent: "I agree to the school contacting me about this enquiry.",
+          submit: "Send enquiry",
+        },
+        // Illustrative stages; replace with the school's own year groups.
+        gradeOptions: ["Early years", "Primary", "Secondary", "Not sure yet"],
+        successTitle: "Enquiry sent",
+        successMessage: "Thank you. Your enquiry has been received, and the admissions team will be in touch.",
+      },
+    },
+  },
+  // DEVELOPMENT CONTENT for /contact. The contact details it shows come from
+  // `contact` and `location` above, which are placeholders: replace them
+  // with the school's verified details. Add location.mapUrl only for a
+  // verified address; until then no directions link is shown.
+  contactPage: {
+    seo: {
+      title: "Contact",
+      description: "Contact details for the school, and a form for general questions.",
+    },
+    hero: {
+      eyebrow: "Let's connect",
+      title: "We're here to help.",
+      description:
+        "Have a question about our school, programmes, or next steps? Get in touch and we'll help you find the right information.",
+      action: { label: "Send us a message", href: "#message" },
+    },
+    details: {
+      title: "Contact details",
+      labels: {
+        address: "Visit",
+        phone: "Call",
+        email: "Email",
+        hours: "Office hours",
+        social: "Follow",
+        admissions: "Admissions",
+      },
+      directionsLabel: "Get directions",
+      admissionsLink: { label: "Make an admissions enquiry", href: "/admissions#enquire" },
+    },
+    enquiry: {
+      eyebrow: "Send a message",
+      title: "Ask us anything.",
+      description:
+        "For general questions, use the form and the right person at the school will reply. Thinking about joining? The admissions enquiry form reaches the admissions team directly.",
+      form: {
+        labels: {
+          name: "Your name",
+          email: "Email address",
+          phone: "Phone number",
+          subject: "What is your message about?",
+          message: "Your message",
+          consent: "I agree to the school contacting me about this message.",
+          submit: "Send message",
+        },
+        // Illustrative topics; replace with the school's own.
+        subjectOptions: ["General question", "Visiting the school", "Community and partnerships", "Something else"],
+        requireMessage: true,
+        successTitle: "Message sent",
+        successMessage: "Thank you. Your message has been received, and the school will reply as soon as it can.",
+      },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],
