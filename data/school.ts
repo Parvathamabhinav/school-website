@@ -613,6 +613,96 @@ export const school: School = {
       secondaryAction: { label: "Contact the school", href: "/contact" },
     },
   },
+  // DEVELOPMENT CONTENT for /campus: illustrative copy and stock photography
+  // of other places, not this school's campus. No space listed here is a
+  // claim that the school has that facility. Replace each space with the
+  // school's own (and its own photographs), keep `details` to verified
+  // facts, and add `practical` (accessibility, visits) only when supplied.
+  campusPage: {
+    seo: {
+      title: "Campus",
+      description: "The places where students learn, read, play, create and spend their school days.",
+    },
+    hero: {
+      eyebrow: "Our campus",
+      title: "Spaces that inspire discovery.",
+      description: "Explore the environments where students learn, collaborate, create, and spend their school days.",
+      media: { image: photo.gardenPlayground, focalPoint: "50% 62%", mobileFocalPoint: "46% 60%" },
+      caption: "Illustrative photograph of school grounds, for development.",
+      action: { label: "Explore the spaces", href: "#spaces" },
+    },
+    introduction: {
+      eyebrow: "The learning environment",
+      title: "The places around us shape the way we learn.",
+      paragraphs: [
+        "A good school building does more than keep the weather out. Light, room to move and a place for everything help students settle, concentrate and feel at home.",
+        "Students spend their days in many kinds of space: quiet ones for reading and focused work, busy ones for making and experimenting, and open ones for play and sport. Moving between them is part of the rhythm of a school day.",
+      ],
+      note: "Illustrative introduction for development. Replace with the school's own description of its site.",
+    },
+    spaces: {
+      eyebrow: "Explore the spaces",
+      title: "Where the school day happens.",
+      description: "A few of the kinds of space a school campus can bring together.",
+      items: [
+        {
+          id: "classrooms",
+          category: "Learning spaces",
+          title: "Classrooms",
+          description: "Calm, well-lit rooms where lessons begin, with space to work alone, in pairs or as a whole class.",
+          media: { image: photo.emptyClassroom, focalPoint: "50% 60%" },
+          caption: "Illustrative photograph: a classroom.",
+        },
+        {
+          id: "music",
+          category: "Creative activities",
+          title: "Music and the arts",
+          description: "Rooms for practising, rehearsing and performing, where students find their own ways to express ideas.",
+          media: { image: photo.youngMusicians, focalPoint: "50% 35%" },
+          caption: "Illustrative photograph: a music lesson.",
+        },
+        {
+          id: "library",
+          category: "Reading and research",
+          title: "The library",
+          description: "A quiet place to read, browse and research, and to discover books students might not have chosen otherwise.",
+          media: { image: photo.glassLibrary, focalPoint: "55% 55%" },
+          caption: "Illustrative photograph: a library reading room.",
+        },
+        {
+          id: "science",
+          category: "Science and practical learning",
+          title: "Laboratories",
+          description: "Practical spaces where students observe, measure and test ideas for themselves.",
+          media: { image: photo.laboratory, focalPoint: "50% 50%" },
+          caption: "Illustrative photograph: a laboratory bench.",
+        },
+        {
+          id: "sport",
+          category: "Sport and movement",
+          title: "Sports grounds",
+          description: "Room to run, train and compete, and to learn teamwork, persistence and fair play.",
+          media: { image: photo.footballPitch, focalPoint: "50% 62%", mobileFocalPoint: "75% 60%" },
+          caption: "Illustrative photograph: a football pitch.",
+        },
+        {
+          id: "outdoors",
+          category: "Outdoor environments",
+          title: "Gardens and grounds",
+          description: "Outdoor spaces for growing, exploring and taking a breath of fresh air between lessons.",
+          media: { image: photo.schoolGarden, focalPoint: "30% 50%" },
+          caption: "Illustrative photograph: a garden with raised beds.",
+        },
+      ],
+      note: "Illustrative spaces and stock photographs for development. They do not show this school or confirm that it has these facilities.",
+    },
+    closing: {
+      title: "See the campus for yourself.",
+      description: "Find out how admissions work, or discover more about learning at the school.",
+      primaryAction: { label: "Explore admissions", href: "/admissions" },
+      secondaryAction: { label: "Discover academic life", href: "/academics" },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],

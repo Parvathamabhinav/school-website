@@ -299,4 +299,58 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQAAoAA4BaJYgCdH8AguBsTf+/W9AA/oO5Q9/hWJ0hTZNWpA06eyvVMnWaWWxGs4PBquqL9beerptmAk7mdqbu5lYf40LChYjRUjzzbIW8fwVdLHbNjD0gEiEgAA==",
     credit: unsplash("Ronald Felton", "6c86TCPmNRQ"),
   },
+  gardenPlayground: {
+    src: "/images/development/campus-page/garden-playground.webp",
+    alt: "Pupils in school uniform playing on a spiral slide and climbing frame in a leafy garden beside low school buildings",
+    width: 2400,
+    height: 1594,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABQAgCdASoQAAsAA4BaJbACdADp68IaqY0ZCgAA/mR33PneVVu/m7Ya387XqGMH+N6tOV+GEkEd4wKd/lMnc07HkTKi9YV18hSOdxeI5dtUvGPQFsAlFoCmJwAAAA==",
+    credit: unsplash("Hussain Badshah", "BrheXGlVRhs"),
+  },
+  emptyClassroom: {
+    src: "/images/development/campus-page/empty-classroom.webp",
+    alt: "A bright, empty classroom with rows of wooden desks facing a green chalkboard",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAADwAQCdASoQAAkAA4BaJZQCdAEDG0+jM8AA/mWYZZbGyVTpibOVFSR4Ze5K1NYz1owQGSg189C9crIF8T/K/5RWY0cJo2q7lnAAAA==",
+    credit: unsplash("Ivan Aleksic", "PDRFeeDniCk"),
+  },
+  glassLibrary: {
+    src: "/images/development/campus-page/glass-library.webp",
+    alt: "A library with floor-to-ceiling windows onto trees, low bookshelves and round reading tables",
+    width: 2000,
+    height: 1500,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQAgCdASoQAAwAA4BaJbACdADp3fHJCQcAAP3n4EI1fJSbU541XPTspEm3DKd1glTOkCFbqZDuiiodLmOsiBT+sQSX5ge1xvgFNeMFng7Laq/0zAAAAA==",
+    credit: unsplash("Drahomír Hugo Posteby-Mach", "n4y3eiQSIoc"),
+  },
+  footballPitch: {
+    src: "/images/development/campus-page/football-pitch.webp",
+    alt: "An artificial-grass football pitch with a goal, in front of a sports hall and school buildings",
+    width: 2000,
+    height: 1125,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACwAQCdASoQAAkAA4BaJaACdADFlouaAMsiellXzDOi0qvA8OYjDG+OJa+26L+QRBE38JJmvP+e+I1kUsA8zg9OncSvHcomp5BvZAAA",
+    credit: unsplash("WrS.tm.pl", "KsD93MsUgTg"),
+  },
+  youngMusicians: {
+    src: "/images/development/campus-page/young-musicians.webp",
+    alt: "Two boys in red jumpers smiling as they play violin and cello from sheet music",
+    width: 1400,
+    height: 2100,
+    blurDataURL:
+      "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JbACdL1yBOupGt4eYTCR5Ow6WAP7ccTO9nOEH0zrgKpZX2A2nEOMnrOeJPBp3uL8TeaiMY0/r8OwrBNB8dXh6dyxXTr89ODaHgO3yaboq6BCFwjSYAX6JFHfpKzXmjE0OvOCqPwA8bHokDI5P2l37t9ycwFzbdWIxUAAA",
+    credit: unsplash("Jay Nlper", "mqSFA72Cm6o"),
+  },
+  schoolGarden: {
+    src: "/images/development/campus-page/school-garden.webp",
+    alt: "A young child watering plants in raised vegetable beds in a garden",
+    width: 2000,
+    height: 1335,
+    blurDataURL:
+      "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoQAAsAA4BaJYwCdAED2FlegAD+5gd2Uz0z158s0wQsmgu6WKjFhghi4ah97R56dHl4Lfvjx0lbz9XRX8ZgufNG2TYYCG84AAA=",
+    credit: unsplash("Filip Urban", "ffJ8Qa0VQU0"),
+  },
 } satisfies Record<string, ImageAsset>;

@@ -38,6 +38,7 @@ export interface School {
   contactPage?: ContactPageContent;
   about?: AboutPageContent;
   academics?: AcademicsPageContent;
+  campusPage?: CampusPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -217,6 +218,77 @@ export interface LearningPractice {
   description: string;
   /** Cropped landscape or portrait depending on its place in the layout. */
   media: EditorialMedia;
+}
+
+/* --------------------------------------------------------------- Campus -- */
+
+/**
+ * The /campus page (the homepage's short campus section is `campus`).
+ * Facilities, sizes, provisions and arrangements are facts: publish only
+ * what the school confirms. Until the school's own photographs are in
+ * place, say so in each `caption` and the section `note`s.
+ */
+export interface CampusPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** Wide photograph shown edge to edge; phones crop it to portrait. */
+    media: EditorialMedia;
+    /** Shown under the photograph, e.g. what it shows. */
+    caption?: string;
+    /** Optional in-page link, usually "#spaces". */
+    action?: LinkAction;
+  };
+  introduction: {
+    eyebrow?: string;
+    /** A short statement; the section heading. */
+    title: string;
+    paragraphs: string[];
+    note?: string;
+  };
+  /** Rendered at #spaces. */
+  spaces: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** In display order; the layout varies with each position. */
+    items: CampusSpace[];
+    note?: string;
+  };
+  /** Accessibility, visiting and similar. Omit until the school supplies it. */
+  practical?: {
+    eyebrow?: string;
+    title: string;
+    items: { id: string; title: string; description: string }[];
+    action?: LinkAction;
+  };
+  closing: {
+    title: string;
+    description?: string;
+    primaryAction: LinkAction;
+    secondaryAction?: LinkAction;
+  };
+}
+
+export interface CampusSpace {
+  /** Stable, URL-safe identifier, unique within the list (used as an anchor). */
+  id: string;
+  /** Short label, e.g. "Reading and research". */
+  category: string;
+  title: string;
+  description: string;
+  /**
+   * Cropped to its place in the sequence (wide, portrait or landscape);
+   * set focalPoint to keep the subject in frame.
+   */
+  media: EditorialMedia;
+  /** Shown under the photograph. */
+  caption?: string;
+  /** Verified facts only, e.g. "Open to students before and after lessons". */
+  details?: string[];
 }
 
 /* -------------------------------------------------------------- Contact -- */
