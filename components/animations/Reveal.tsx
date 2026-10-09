@@ -61,6 +61,13 @@ export function Reveal({
         targets.length > 0 &&
         getComputedStyle(targets[0]).opacity !== "0";
 
+      // GSAP owns the initial state from here (or nothing animates). Drop the
+      // CSS hiding before building the preset: a from() tween records the
+      // element's current opacity as its end value, and would otherwise
+      // animate to the CSS-hidden 0. Same layout effect, so nothing paints
+      // in between.
+      element.removeAttribute("data-motion-pending");
+
       const mm = gsap.matchMedia();
       if (!failsafeFired) {
         mm.add(motionQueries.motionOk, () => {
@@ -77,9 +84,6 @@ export function Reveal({
           return () => element.removeEventListener("focusin", reveal);
         });
       }
-
-      // GSAP owns the initial state now (or nothing animates).
-      element.removeAttribute("data-motion-pending");
 
       return () => mm.revert();
     },
