@@ -703,10 +703,86 @@ export const school: School = {
       secondaryAction: { label: "Discover academic life", href: "/academics" },
     },
   },
+  // DEVELOPMENT CONTENT for /gallery: illustrative copy. The photographs
+  // (`gallery` below and `featured` here) are stock images of other places,
+  // not this school. Replace them with the school's own; themes with no
+  // photographs are hidden automatically.
+  galleryPage: {
+    seo: {
+      title: "Gallery",
+      description: "Photographs of learning, creativity, sport, the outdoors and community in school life.",
+    },
+    hero: {
+      eyebrow: "Life at our school",
+      title: "A closer look at learning and life.",
+      description: "Explore the moments, spaces, and shared experiences that shape a school community.",
+    },
+    featured: [
+      {
+        media: { image: photo.forestBallGame, focalPoint: "50% 55%", mobileFocalPoint: "55% 55%" },
+        caption: "Play in the open air.",
+      },
+      {
+        media: { image: photo.drawingTogether, focalPoint: "55% 50%" },
+        caption: "Drawing side by side.",
+      },
+    ],
+    collection: {
+      eyebrow: "The collection",
+      title: "Moments from the school year.",
+      description: "Choose a theme, or browse everything. Select a photograph to see it larger.",
+      categories: [
+        { id: "learning", label: "Learning" },
+        { id: "science", label: "Science and discovery" },
+        { id: "arts", label: "Arts and music" },
+        { id: "sport", label: "Sport and play" },
+        { id: "outdoors", label: "Outdoors" },
+        { id: "community", label: "Community" },
+      ],
+      allLabel: "All",
+      note: "Illustrative stock photographs for development. They do not show this school, its pupils or its facilities.",
+    },
+    closing: {
+      title: "There is more to see in person.",
+      description: "Explore the spaces where these moments happen, or find out how to join the school.",
+      primaryAction: { label: "Explore the campus", href: "/campus" },
+      secondaryAction: { label: "Explore admissions", href: "/admissions" },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],
   events: [],
-  gallery: [],
+  // DEVELOPMENT PHOTOGRAPHY (see galleryPage above): stock images, in display
+  // order. `category` is a galleryPage.collection.categories id.
+  gallery: [
+    { id: "reading-at-desks", image: photo.brightClassroom, caption: "Reading in a bright classroom.", category: "learning" },
+    {
+      id: "pipette",
+      image: photo.pipetteExperiment,
+      caption: "A careful drop at a time.",
+      category: "science",
+      link: { label: "How learning happens", href: "/academics#approach" },
+    },
+    { id: "hoops", image: photo.hoopJump, caption: "Through the hoops.", category: "sport", focalPoint: "50% 60%" },
+    { id: "ceramics", image: photo.ceramicPainting, caption: "Painting ceramic figures.", category: "arts" },
+    { id: "heart-hands", image: photo.heartHands, caption: "Friends, together.", category: "community" },
+    { id: "choir", image: photo.youngChoir, caption: "Voices in harmony.", category: "arts", focalPoint: "50% 35%" },
+    { id: "classroom-friends", image: photo.classroomFriends, caption: "Between lessons.", category: "learning", focalPoint: "50% 40%" },
+    { id: "plant-study", image: photo.plantStudy, caption: "Looking closely at living things.", category: "science" },
+    {
+      id: "tug-of-war",
+      image: photo.tugOfWar,
+      caption: "Pulling together.",
+      category: "sport",
+      link: { label: "Sports grounds", href: "/campus#space-sport" },
+    },
+    { id: "two-friends", image: photo.twoFriends, caption: "A conversation between friends.", category: "community", focalPoint: "50% 40%" },
+    { id: "tall-grass", image: photo.tallGrass, caption: "Time outdoors.", category: "outdoors", focalPoint: "45% 70%" },
+    { id: "plasma-ball", image: photo.plasmaBall, caption: "Seeing electricity at work.", category: "science", focalPoint: "45% 55%" },
+    { id: "shared-desk", image: photo.sharedDesk, caption: "Working it out together.", category: "learning" },
+    { id: "playground-game", image: photo.playgroundGame, caption: "A game on the playground.", category: "sport" },
+    { id: "steps", image: photo.stepsTogether, caption: "Sitting out in the sun.", category: "community" },
+  ],
   videos: [],
 };

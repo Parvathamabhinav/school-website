@@ -39,6 +39,7 @@ export interface School {
   about?: AboutPageContent;
   academics?: AcademicsPageContent;
   campusPage?: CampusPageContent;
+  galleryPage?: GalleryPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -289,6 +290,53 @@ export interface CampusSpace {
   caption?: string;
   /** Verified facts only, e.g. "Open to students before and after lessons". */
   details?: string[];
+}
+
+/* -------------------------------------------------------------- Gallery -- */
+
+/**
+ * The /gallery page. The photographs themselves are `school.gallery`; this
+ * holds the page around them. Until the school's own photographs are in
+ * place, say so in the collection `note`.
+ */
+export interface GalleryPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+  };
+  /** One or two photographs that open the page, before the collection. */
+  featured?: { media: EditorialMedia; caption?: string }[];
+  /** Rendered at #collection. */
+  collection: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /**
+     * Themes the photographs are grouped by, in filter order. A theme with
+     * no photographs is never shown.
+     */
+    categories: GalleryCategory[];
+    /** Label of the filter that shows every photograph, e.g. "All". */
+    allLabel: string;
+    /** Set false to hide the filters even when there are several themes. */
+    filters?: boolean;
+    note?: string;
+  };
+  closing: {
+    title: string;
+    description?: string;
+    primaryAction: LinkAction;
+    secondaryAction?: LinkAction;
+  };
+}
+
+export interface GalleryCategory {
+  /** Stable, URL-safe identifier, referenced by `GalleryItem.category`. */
+  id: string;
+  label: string;
 }
 
 /* -------------------------------------------------------------- Contact -- */
@@ -581,11 +629,22 @@ export interface SchoolEvent {
   image?: ImageAsset;
 }
 
+/**
+ * One photograph in the school's gallery (`school.gallery`, shown on
+ * /gallery in order). The layout crops it to suit its place, by orientation.
+ */
 export interface GalleryItem {
+  /** Stable, URL-safe identifier, unique within the gallery. */
   id: string;
   image: ImageAsset;
+  /** A short line under the photograph. */
   caption?: string;
+  /** The `id` of one of `galleryPage.collection.categories`. */
   category?: string;
+  /** CSS object-position for the crop, e.g. "50% 30%". */
+  focalPoint?: string;
+  /** Optional related page, shown after the caption. */
+  link?: LinkAction;
 }
 
 /* ----------------------------------------------------------- Admissions -- */

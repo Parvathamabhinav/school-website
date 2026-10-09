@@ -353,4 +353,157 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADQAQCdASoQAAsAA4BaJYwCdAED2FlegAD+5gd2Uz0z158s0wQsmgu6WKjFhghi4ah97R56dHl4Lfvjx0lbz9XRX8ZgufNG2TYYCG84AAA=",
     credit: unsplash("Filip Urban", "ffJ8Qa0VQU0"),
   },
+  forestBallGame: {
+    src: "/images/development/gallery/forest-ball-game.webp",
+    alt: "Four children leaping to play with a ball in a misty, tree-lined meadow",
+    width: 2400,
+    height: 1661,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoQAAsAA4BaJbACdAC56bJCAAD+vBiFlaYrgFxHyGBlMS4th5Mm1oYgpzu4LjyGzn7m17lxaxu1WEHb97zbU221wAA=",
+    credit: unsplash("Robert Collins", "tvc5imO5pXk"),
+  },
+  drawingTogether: {
+    src: "/images/development/gallery/drawing-together.webp",
+    alt: "Four girls in white school uniforms lying on the floor, drawing side by side",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAsAA4BaJYgCdAYtVVoxiqtrrBQA/uU6/TXcXz3tfig275P3QYWeP/5Qk6ncjZgZ5X9Nqdd7d+pjux0xBEjXseyhEuGh/6Wq8TvDfh7+7GhLllv/u4yfpxtE18FIZFCFYAAA",
+    credit: unsplash("Jenna Burghart", "QTvl7ptXev0"),
+  },
+  brightClassroom: {
+    src: "/images/development/gallery/bright-classroom.webp",
+    alt: "Pupils in school uniform reading at rows of desks in a bright classroom",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoQAAsAA4BaJZAC7AEQ/ZbFfXCQAP4DNUek3TcF1td7au5F09a7q5saLNiWdtDEyaS6HCi7t49Xg4UtW+/YYVLWoiwhMas9zvDGLdhgAAA=",
+    credit: unsplash("Haseeb Modi", "OcDJhBm8Jnc"),
+  },
+  sharedDesk: {
+    src: "/images/development/gallery/shared-desk.webp",
+    alt: "A boy and a girl leaning over the same worksheet, colouring it in together at their desk",
+    width: 2000,
+    height: 1325,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAQAgCdASoQAAsAA4BaJbACdADcn9LDkHMAAP7Ceh9D6ofJ4SkXQ6xenOuuOv24s8GxiYqOpU4eWXaP/MWnqvOd/Ejk3CmA91GsEUk74K8Ot609OF9WlN1l8zpQAA==",
+    credit: unsplash("Ruslan Horovyi", "ycuGtOTAtuU"),
+  },
+  classroomFriends: {
+    src: "/images/development/gallery/classroom-friends.webp",
+    alt: "Three boys in a classroom, one smiling over the shoulders of the two sitting in front",
+    width: 1400,
+    height: 2100,
+    blurDataURL:
+      "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAAAwBQCdASoQABgAPu1iqU2ppaOiMAgBMB2JbAC7IE1wAbxB5KoF73cfRkM0RQJHD7Fk8AD+RVf5UH9cUfJuP3YUBsDHoYGt+k8e19sj+CR1d3yjL1UW5vDbumpOgfPTi8qPOPRSE/CO2nobjX66VuEGJCYq5b2UDIj3iXB8CvmylCvgsNeayAQQyS/Qk2UK9RbA4lyLtLv8fjMluXlObKXW2bUtLFkxXed/4XlP34qGT5ws/7rUm/F7x2oSGffydHc2/ttg4yKf4//Bv9mhXvDTW8BPYlP/D4ZdGT/8C7+fz/+QAAA=",
+    credit: unsplash("Sushanta Rokka", "XrWlSSW4DNM"),
+  },
+  pipetteExperiment: {
+    src: "/images/development/gallery/pipette-experiment.webp",
+    alt: "A young boy in a lab coat dropping blue liquid into a flask with a pipette",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADwAQCdASoQAAsAA4BaJaACdAC6OMFyUAAA/uUronT4FaRiiSzghFODuhnU4yk6hxemLaMGfyCbU1C5QOWJX3BgN4v35dhEAxXdiB4KI9XHRlb4uFwgckstdyopsmBy2qdYM08MUs7AAA==",
+    credit: unsplash("Clint Patterson", "CgIFBwOkApI"),
+  },
+  plantStudy: {
+    src: "/images/development/gallery/plant-study.webp",
+    alt: "A boy using tweezers to study a small plant growing in a glass jar",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwAgCdASoQAAsAA4BaJYgCdAYulmsix/fEwAD+fqjyWGI1Ndeeyn7deAEy2YkmGdPbHJ4QIm2iq4i7Ac7+TlgMJAlYgN329ALo/pvsIIk6fN0VzonHOq763xVvAAAA",
+    credit: unsplash("Kris Len Lu", "6wmu83LiSws"),
+  },
+  plasmaBall: {
+    src: "/images/development/gallery/plasma-ball.webp",
+    alt: "A girl touching a glowing plasma ball at a science exhibit",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABQAgCdASoQAAsAA4BaJZACdAYvXgdwFFJe3AAA/qZcdgnvm+2R0M/mho69oTKDkgu4MHozUx9h6hSPXvNKGSCeLV50YaRrTDYUToPkXTB9Cgzp2MyXgAAA",
+    credit: unsplash("ONUR KURT", "rrVpVNDDXhU"),
+  },
+  ceramicPainting: {
+    src: "/images/development/gallery/ceramic-painting.webp",
+    alt: "Girls in aprons painting small ceramic figures at a long table in an art studio",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABQAgCdASoQAAsAA4BaJbACdAYrnyADNa5+agAAzIzg4CkxD0pZyDZpgz8O/JTWC8/Bd372QlnpvbwnyVWTEHJsRLUqfCDUYqWmujfJIo2qiElaVwc/ix3vTIi3atkHV5iD08ptqxp0AAAA",
+    credit: unsplash("Anna Khromova", "BM3TPegVl_M"),
+  },
+  youngChoir: {
+    src: "/images/development/gallery/young-choir.webp",
+    alt: "Children and teenagers in embroidered shirts singing together in a choir",
+    width: 2000,
+    height: 1124,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABwAgCdASoQAAkAA4BaJYgCdG1/tv8WoA8xceUAAP7SPXeqjBKeLcf6yTtLqbLo0Spic/bVtKcHZU1XzAkMRn3T6/Ep/eqn6HYKb1tsvUIyyjrvb2fbjTETxRg49zGQXCt2x99x84AAAA==",
+    credit: unsplash("Olek Buzunov", "Qnbnnfs5Rmw"),
+  },
+  hoopJump: {
+    src: "/images/development/gallery/hoop-jump.webp",
+    alt: "A boy in a yellow shirt jumping through a row of hoops on a grass field",
+    width: 1400,
+    height: 2100,
+    blurDataURL:
+      "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JagCdACIGpp+iFcrf5vtkAPjb7wRPbRJGSLHzmm0f1cP6OSKwrzenxIV8NTGI8mBD8EcEV3I5ATyMfwEONyESCgrDNRPa4wAM4m26/IuCP7OI1kQ7JSjbxAIldZVm2VpDFg53roCtUcsaEmbI7SLHEiJplwAA",
+    credit: unsplash("Jakub Klucký", "IDX7-JoMHJQ"),
+  },
+  playgroundGame: {
+    src: "/images/development/gallery/playground-game.webp",
+    alt: "Girls in school uniform playing a hopscotch-style game drawn on a dusty playground",
+    width: 2000,
+    height: 1276,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAAAwAgCdASoQAAoAA4BaJbACdAEPh76JqSzwQAD+8VAsFDamWKdaBFj6g4GmaTY7xzz9SttsbwcmDvIAxXJ0j04/F70IVKxEQgXqXccNEHWqUTObk127VgZoN/ikXZsN3uVwrcAA",
+    credit: unsplash("Pavan Prasad", "SI6PW-WPOAI"),
+  },
+  tugOfWar: {
+    src: "/images/development/gallery/tug-of-war.webp",
+    alt: "Children pulling together in a game of tug-of-war on a sunny field",
+    width: 2000,
+    height: 1500,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAQCdASoQAAwAA4BaJbACdAYuu6Ts6ADdkPAiokPOwAcbxVtSS14N7t8HfIhETSmHpA3owbFWZJWIudwJ+oSMadUIzH1OMpenO5qU4b+JnEKrcLNw28PDnjeKa8s4gAA=",
+    credit: unsplash("Pierre Vaucher", "LazgZx2HvB0"),
+  },
+  tallGrass: {
+    src: "/images/development/gallery/tall-grass.webp",
+    alt: "Three small children sitting together in tall grass at the edge of a sunlit wood",
+    width: 1400,
+    height: 2100,
+    blurDataURL:
+      "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAACQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagB3ALsCQDEkdf//cVHebkyMnEAA/uk9lRhmezb+fI7GPLKE1yHKaVD5++++uOkqT7xvyyWWAZkw5c3y5e5ztix+Ra//8h1zr4BIj7lYXaLcAW+eqvET8Ja6fKRZ8/Rh8ckmWgivlLshaV5EIuH5S+NP2aJrYXqz1oAzfAKQkrYSnqi5KWbQjF2P5/V9oMjxNhDYcWAAAA==",
+    credit: unsplash("Laura Ohlman", "sW6TRpgZLMw"),
+  },
+  heartHands: {
+    src: "/images/development/gallery/heart-hands.webp",
+    alt: "A group of pupils in school uniform smiling and making heart shapes with their hands",
+    width: 2000,
+    height: 1328,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQAgCdASoQAAsAA4BaJZQCdAEUKFj/468gAP7vUzp9LBAFz3re/Z45CtmH06kkWxqyPu/HIQqIR5buX/aaXZJ8QyZcVN4vhgf7J3afeb30/hLAGz0O4+oAAAA=",
+    credit: unsplash("Anna Amelina", "BGvLIb1wriA"),
+  },
+  twoFriends: {
+    src: "/images/development/gallery/two-friends.webp",
+    alt: "Two girls in blue school uniforms and ties sharing a conversation",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAADQAgCdASoQAAsAA4BaJbACdIDf6AFPKW7HzQqz1d3AAP7xHBeBT8HhL5J+cHJc2fANicwU4olaJuGTn3/ntznFcxQ9DXK9oBTEl8pXvevY148V7kAMrapLb42uFmhPh13lIqzTNqFLKltfuhWKpbEe40vG2hCPCSaTQDskdPwlRCgA",
+    credit: unsplash("Sushanta Rokka", "aizNGa9MFik"),
+  },
+  stepsTogether: {
+    src: "/images/development/gallery/steps-together.webp",
+    alt: "Four boys sitting side by side on a step outside a building",
+    width: 2000,
+    height: 1449,
+    blurDataURL:
+      "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAQCdASoQAAwAA4BaJQBOgMXXiqhXEuAAyzVWw7HXWXdex1ha6sGkUqupakkcvcpexp2zNaRALuFxwAPGrGJKcdUZNzEgKqs5tu0RWBHrq5jvxe7+THf1J4WlDJ/HxktnOfkKR4NYkTJrgAA=",
+    credit: unsplash("Peaky Frames", "0z5xv04BDOQ"),
+  },
 } satisfies Record<string, ImageAsset>;
