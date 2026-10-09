@@ -242,8 +242,7 @@ export const school: School = {
       },
     ],
   },
-  // DEVELOPMENT CONTENT. /admissions and /contact are planned routes (the
-  // same ones the navigation uses); neither page exists yet.
+  // DEVELOPMENT CONTENT. Links to the /admissions and /contact pages.
   admissionsCta: {
     eyebrow: "Your next chapter",
     title: "A great journey begins with a conversation.",
