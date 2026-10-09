@@ -60,6 +60,8 @@ export function EnquiryForm({ kind, content, contact }: EnquiryFormProps) {
   const formRef = useRef<HTMLFormElement>(null);
   const statusRef = useRef<HTMLDivElement>(null);
   const startedAtRef = useRef<HTMLInputElement>(null);
+  const submissionIdRef = useRef<HTMLInputElement>(null);
+  const serverSubmissionId = "submissionId" in state ? state.submissionId : "";
   const baseId = useId();
   const fieldId = (field: string) => `${baseId}-${field}`;
 
@@ -71,6 +73,28 @@ export function EnquiryForm({ kind, content, contact }: EnquiryFormProps) {
   useEffect(() => {
     if (startedAtRef.current) startedAtRef.current.value = String(Date.now());
   }, [state]);
+
+  // React resets the form after each server response: inputs return to
+  // their defaultValue, but selects lose theirs. Restore them, so retrying an
+  // enquiry that wasn't confirmed doesn't mean choosing options again.
+  useEffect(() => {
+    const form = formRef.current;
+    if (!form || !values) return;
+    for (const field of ["grade", "subject"] as const) {
+      const select = form.querySelector<HTMLSelectElement>(`select[name="${field}"]`);
+      if (select) select.value = values[field];
+    }
+  }, [values]);
+
+  // One id per enquiry, kept across retries so the provider can drop
+  // duplicates: the server's echo once it has seen the enquiry, otherwise a
+  // new one. Without JavaScript the server supplies it (see actions.ts).
+  useEffect(() => {
+    const input = submissionIdRef.current;
+    if (!input) return;
+    if (serverSubmissionId) input.value = serverSubmissionId;
+    else if (!input.value && typeof crypto !== "undefined" && "randomUUID" in crypto) input.value = crypto.randomUUID();
+  }, [serverSubmissionId]);
 
   // After each server response, move focus to what needs attention.
   useEffect(() => {
@@ -277,6 +301,7 @@ export function EnquiryForm({ kind, content, contact }: EnquiryFormProps) {
         <input id={fieldId("website")} name="website" type="text" tabIndex={-1} autoComplete="off" />
       </div>
       <input ref={startedAtRef} type="hidden" name="startedAt" defaultValue="" />
+      <input ref={submissionIdRef} type="hidden" name="submissionId" defaultValue={serverSubmissionId} />
 
       <div ref={statusRef} tabIndex={-1} aria-live="polite" className="empty:hidden">
         {state.status === "unavailable" && (
@@ -291,7 +316,7 @@ export function EnquiryForm({ kind, content, contact }: EnquiryFormProps) {
         )}
         {state.status === "failed" && (
           <Notice contact={contact}>
-            Sorry, your {item} could not be sent just now. Please try again in a moment, or contact {who} directly:
+            Sorry, we could not confirm that your {item} was sent. Please try again in a moment, or contact {who} directly:
           </Notice>
         )}
       </div>

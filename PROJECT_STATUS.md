@@ -94,8 +94,8 @@ _Last reviewed: 2026-10-09 (platform reusability audit)._
 - **Kind:** each form has its own server action (`submitAdmissionsEnquiry`, `submitContactEnquiry`), so the server fixes the kind and the browser can't change it. The webhook payload's `type` is `admissions-enquiry` or `contact-enquiry`.
 - **Validation:** the same rules run in the browser and on the server (`lib/enquiries/validation.ts`), derived from the form's data. The server checks everything again, including lengths, allowed options and consent.
 - **Spam protection:** a hidden honeypot field and a 3-second minimum fill time. Server actions are same-origin only. **There is no rate limiting**; add it at the host or the provider.
-- **Delivery:** `lib/enquiries/delivery.ts` (server only) POSTs JSON to `ENQUIRY_WEBHOOK_URL`, with optional `Authorization: Bearer ENQUIRY_WEBHOOK_SECRET` and a 10-second timeout. Logs contain no personal data.
-- **No false success:** a confirmation appears only after the provider returns a 2xx status. Without a webhook, or on failure, the form says nothing was sent and shows the school's email and phone. Forms work without JavaScript.
+- **Delivery:** `lib/enquiries/delivery.ts` (server only) POSTs JSON to `ENQUIRY_WEBHOOK_URL` with `Authorization: Bearer ENQUIRY_WEBHOOK_SECRET`, a 10-second timeout, no redirects, and a `submissionId` that stays the same on a retry. In production it sends nothing unless the URL is `https://` and the secret is set. The intended receiver is an n8n workflow (email plus Google Sheets row), **not yet built**. The full contract and setup steps are in [docs/enquiry-webhook.md](docs/enquiry-webhook.md). Logs contain no personal data.
+- **No false success:** a confirmation appears only when the provider answers 2xx with `{ "received": true, "submissionId": <same id> }`. Without a webhook the form says nothing was sent; on rejection or timeout it says delivery could not be confirmed. Either way it shows the school's email and phone. Forms work without JavaScript.
 - **Before production:**
   - Configure the provider and route by `type`.
   - Send real test enquiries from both forms.
@@ -108,10 +108,10 @@ _Last reviewed: 2026-10-09 (platform reusability audit)._
 | --- | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | Yes, in production | Canonical links, Open Graph URLs, sitemap, robots. **Falls back to `http://localhost:3000`** if unset |
 | `ENQUIRY_WEBHOOK_URL` | Yes, for working forms | Server only. Without it the forms report that nothing was sent |
-| `ENQUIRY_WEBHOOK_SECRET` | Optional | Server only. Bearer token sent to the webhook |
+| `ENQUIRY_WEBHOOK_SECRET` | Yes, in production | Server only. Bearer token checked by the webhook (n8n Header Auth) |
 | `ENABLE_DESIGN_SYSTEM` | Optional | `true` exposes `/design-system` in production (e.g. a preview deployment) |
 
-`.env.example` documents all but `ENABLE_DESIGN_SYSTEM`. Builds go through `scripts/next-production.mjs`, which sets `NODE_ENV=production`.
+`.env.example` documents every variable. Builds go through `scripts/next-production.mjs`, which sets `NODE_ENV=production`.
 
 ## Known issues
 
@@ -128,7 +128,7 @@ _Last reviewed: 2026-10-09 (platform reusability audit)._
 ## Outstanding work
 
 1. **Replace development content** with the school's verified details, photographs, events and time zone. Remove or confirm the announcement and the "independent school" wording.
-2. **Connect enquiries:** provider, environment variables, real tests and rate limiting.
+2. **Connect enquiries:** build the n8n workflow from [docs/enquiry-webhook.md](docs/enquiry-webhook.md), set the environment variables, run the listed delivery tests, and add rate limiting.
 3. **Set `NEXT_PUBLIC_SITE_URL`** on every deployment.
 4. **Add legal pages** (privacy, accessibility) and `footer.legalLinks`.
 5. **Test on real devices and with screen readers.**
