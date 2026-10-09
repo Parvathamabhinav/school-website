@@ -24,7 +24,8 @@ export function AdmissionsCtaSection({ data }: AdmissionsCtaSectionProps) {
   const headingId = "admissions-cta-title";
 
   return (
-    <Section aria-labelledby={headingId} tone="inverse" spacing="lg">
+    // Less space below: the footer continues on the same navy, after a hairline.
+    <Section aria-labelledby={headingId} tone="inverse" spacing="none" className="pt-section-lg pb-section-md">
       <Container width="wide">
         <Reveal preset="stagger" target="children" className="flex flex-col gap-lg md:gap-xl">
           {eyebrow && (

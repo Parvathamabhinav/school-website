@@ -261,6 +261,10 @@ export const school: School = {
     primaryAction: { label: "Explore admissions", href: "/admissions" },
     secondaryAction: { label: "Arrange a visit", href: "/contact" },
   },
+  // DEVELOPMENT CONTENT. Add legalLinks once those pages exist.
+  footer: {
+    description: "A place for curious minds to learn deeply, explore boldly and grow with purpose.",
+  },
   programs: [],
   facilities: [],
   testimonials: [],

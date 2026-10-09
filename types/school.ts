@@ -29,6 +29,7 @@ export interface School {
   achievements?: AchievementsContent;
   studentLife?: StudentLifeContent;
   admissionsCta?: AdmissionsCtaContent;
+  footer?: FooterContent;
   testimonials: Testimonial[];
   events: SchoolEvent[];
   gallery: GalleryItem[];
@@ -323,6 +324,17 @@ export interface AdmissionsCtaContent {
   primaryAction: LinkAction;
   /** A quieter alternative, e.g. arranging a visit. */
   secondaryAction?: LinkAction;
+}
+
+/**
+ * Footer content that lives nowhere else. Navigation, contact details,
+ * address and social links come from their existing sources.
+ */
+export interface FooterContent {
+  /** A sentence or two introducing the school. */
+  description?: string;
+  /** e.g. privacy policy, accessibility statement. Shown in the bottom row. */
+  legalLinks?: LinkAction[];
 }
 
 export interface Testimonial {

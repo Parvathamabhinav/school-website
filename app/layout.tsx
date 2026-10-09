@@ -1,5 +1,6 @@
 import type { Viewport } from "next";
 import { SkipLink } from "@/components/layout/SkipLink";
+import { Footer } from "@/components/navigation/Footer";
 import { LazySmoothScroll } from "@/components/layout/LazySmoothScroll";
 import { AnnouncementBar } from "@/components/navigation/AnnouncementBar";
 import { Navbar } from "@/components/navigation/Navbar";
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <AnnouncementBar announcement={school.announcement} />
         <Navbar />
         {children}
+        <Footer />
         {siteConfig.features.smoothScroll && <LazySmoothScroll />}
       </body>
     </html>
