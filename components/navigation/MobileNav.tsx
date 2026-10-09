@@ -12,6 +12,7 @@ import { prefersReducedMotion } from "@/lib/animations/reduced-motion";
 import { distances, durations, staggers, type Easing } from "@/lib/animations/tokens";
 import { lockScroll, unlockScroll } from "@/lib/dom/scroll-lock";
 import type { SchoolContact } from "@/types/school";
+import { telHref } from "@/lib/utils/tel";
 
 /** Matches Tailwind's xl breakpoint, where the desktop navigation takes over. */
 const DESKTOP_QUERY = "(min-width: 80rem)";
@@ -206,7 +207,7 @@ export function MobileNav({ items, action, brand, contact }: MobileNavProps) {
                   </TextLink>
                 </li>
                 <li>
-                  <TextLink href={`tel:${contact.phone.replace(/\s+/g, "")}`} variant="reveal">
+                  <TextLink href={telHref(contact.phone)} variant="reveal">
                     {contact.phone}
                   </TextLink>
                 </li>

@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/Container";
 import { Section } from "@/components/layout/Section";
 import { TextLink } from "@/components/ui/TextLink";
 import type { ContactPageContent, SchoolContact, SchoolLocation, SocialLink, SocialPlatform } from "@/types/school";
+import { telHref } from "@/lib/utils/tel";
 
 const platformNames: Record<SocialPlatform, string> = {
   facebook: "Facebook",
@@ -66,7 +67,7 @@ export function ContactDetails({ data, contact, location, socialLinks }: Contact
 
           {contact.phone && (
             <Entry label={labels.phone}>
-              <TextLink href={`tel:${contact.phone.replace(/\s+/g, "")}`} variant="reveal" className="type-h4">
+              <TextLink href={telHref(contact.phone)} variant="reveal" className="type-h4">
                 {contact.phone}
               </TextLink>
               {contact.officeHours && (

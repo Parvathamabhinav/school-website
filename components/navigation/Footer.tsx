@@ -6,6 +6,7 @@ import { getVisibleNavigation, primaryAction } from "@/config/navigation";
 import { school } from "@/data/school";
 import type { SocialPlatform } from "@/types/school";
 import { SiteLogo } from "./SiteLogo";
+import { telHref } from "@/lib/utils/tel";
 
 const platformNames: Record<SocialPlatform, string> = {
   facebook: "Facebook",
@@ -83,7 +84,7 @@ export function Footer() {
                 </TextLink>
               )}
               {contact.phone && (
-                <TextLink href={`tel:${contact.phone.replace(/\s+/g, "")}`} variant="reveal">
+                <TextLink href={telHref(contact.phone)} variant="reveal">
                   {contact.phone}
                 </TextLink>
               )}

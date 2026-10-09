@@ -18,6 +18,7 @@ import {
 } from "@/lib/enquiries/validation";
 import { cn } from "@/lib/utils/cn";
 import type { EnquiryFormContent } from "@/types/school";
+import { telHref } from "@/lib/utils/tel";
 
 const initialState: EnquiryState = { status: "idle" };
 
@@ -349,7 +350,7 @@ function Notice({ children, contact }: { children: ReactNode; contact: EnquiryFo
           </TextLink>
         )}
         {contact.phone && (
-          <TextLink href={`tel:${contact.phone.replace(/\s+/g, "")}`} variant="underline">
+          <TextLink href={telHref(contact.phone)} variant="underline">
             {contact.phone}
           </TextLink>
         )}

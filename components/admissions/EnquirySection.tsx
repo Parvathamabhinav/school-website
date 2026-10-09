@@ -4,6 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { TextLink } from "@/components/ui/TextLink";
 import type { EnquiryContent, SchoolContact } from "@/types/school";
 import { EnquiryForm } from "@/components/forms/EnquiryForm";
+import { telHref } from "@/lib/utils/tel";
 
 interface EnquirySectionProps {
   data: EnquiryContent;
@@ -48,7 +49,7 @@ export function EnquirySection({ data, contact }: EnquirySectionProps) {
                     </TextLink>
                   )}
                   {phone && (
-                    <TextLink href={`tel:${phone.replace(/\s+/g, "")}`} variant="reveal">
+                    <TextLink href={telHref(phone)} variant="reveal">
                       {phone}
                     </TextLink>
                   )}

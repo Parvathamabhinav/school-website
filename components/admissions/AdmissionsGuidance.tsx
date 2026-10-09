@@ -4,6 +4,7 @@ import { Section } from "@/components/layout/Section";
 import { ResponsiveImage } from "@/components/media/ResponsiveImage";
 import { TextLink } from "@/components/ui/TextLink";
 import type { AdmissionsGuidanceContent, SchoolContact } from "@/types/school";
+import { telHref } from "@/lib/utils/tel";
 
 interface AdmissionsGuidanceProps {
   data: AdmissionsGuidanceContent;
@@ -85,7 +86,7 @@ export function AdmissionsGuidance({ data, contact }: AdmissionsGuidanceProps) {
                   </TextLink>
                 )}
                 {contact.phone && (
-                  <TextLink href={`tel:${contact.phone.replace(/\s+/g, "")}`} variant="reveal">
+                  <TextLink href={telHref(contact.phone)} variant="reveal">
                     {contact.phone}
                   </TextLink>
                 )}
