@@ -506,4 +506,58 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADwAQCdASoQAAwAA4BaJQBOgMXXiqhXEuAAyzVWw7HXWXdex1ha6sGkUqupakkcvcpexp2zNaRALuFxwAPGrGJKcdUZNzEgKqs5tu0RWBHrq5jvxe7+THf1J4WlDJ/HxktnOfkKR4NYkTJrgAA=",
     credit: unsplash("Peaky Frames", "0z5xv04BDOQ"),
   },
+  ribbonDance: {
+    src: "/images/development/events/ribbon-dance.webp",
+    alt: "Children in yellow T-shirts and headbands waving long coloured ribbons in a dance on a school field",
+    width: 2400,
+    height: 1596,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAwAgCdASoQAAsAA4BaJbACdAEO+YjpSAwN6AD+5GoUus18rPlOcZGCgg9zbcr6mysGpwMGzFcXuprDBx9mdjG+H0Kr4s2zkMPJPdazP9pP3KnqLkjxCYAPyoO/coNNblPEXWTPKPD0JAAA",
+    credit: unsplash("Joydeep Sensarma", "APtcTa6Xqp8"),
+  },
+  stageTrumpet: {
+    src: "/images/development/events/stage-trumpet.webp",
+    alt: "A young trumpeter performing on stage, seen past the heads of the audience",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAAAQAgCdASoQAAsAA4BaJZQC7ADp9nmpNwiAAP74ju4cTx5uIjIwbWlDVFlb6/4iw9fmoFaXnUrfRIBtyYC9Pqt1yWXX3qsEiLJ8hEEXEqZAAA==",
+    credit: unsplash("Evan Peck", "Puc_boFMhAA"),
+  },
+  drawingsWall: {
+    src: "/images/development/events/drawings-wall.webp",
+    alt: "A wall covered with children's colourful drawings of rainbows, suns and flowers",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAQCdASoQAAsAA4BaJbACdADRXpv3gAD+yZ90QPHyHyuArUCGsgv7TJCf+bBb1Lm4i5LprjzWtU6taJL10/hRdy6ZC1FdNhwOPYYzOobX0zd4J5wR5nSwAAA=",
+    credit: unsplash("Julia Taubitz", "PIUwrlkMLls"),
+  },
+  culturalDay: {
+    src: "/images/development/events/cultural-day.webp",
+    alt: "Children in bright traditional clothes and flowers in their hair at a cultural celebration",
+    width: 2000,
+    height: 1653,
+    blurDataURL:
+      "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQAgCdASoQAA0AA4BaJbACdAYtzOTBsh4IAP7d3Zw4KbUms/ugn3gz2K3HjwcQMyu9y/tP9uiPT8h/weHw5FUpCZaRZ34nuTnjRWhlalH5X47cNPy7axsVYUg87rOzt2y3pDTqgt/KZ0np1M64cpvcd6unXJbEbxCSeYRHxirzfaR/N3GdCwAA",
+    credit: unsplash("JAFFAR SATHICK", "q833d5dU1OU"),
+  },
+  kiteField: {
+    src: "/images/development/events/kite-field.webp",
+    alt: "Children flying kites on a wide open field under a blue sky",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQAgCdASoQAAsAA4BaJbACdAEf1pq8CuYAAP7FYGQJyIu4VjW3GkZlHmcl1uNlGBf/ba1vuVFKnPfxW/wFfdFHx0NJLgkAAAA=",
+    credit: unsplash("Pavan Prasad", "JBYmlX5tt9k"),
+  },
+  yellowHats: {
+    src: "/images/development/events/yellow-hats.webp",
+    alt: "Young children in matching yellow hats and blue coats gathered together on an outing",
+    width: 1400,
+    height: 2111,
+    blurDataURL:
+      "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAABQBQCdASoQABgAPu1iqU2ppaQiMAgBMB2JbACdMoMlsmzsmsr2fc+dvYT2QleDJkYhjsAA/s28vn/GMex8zZPHU9CjglUc0GwyOpIoLbs1Un3c9HNbsls9gT3J40jYTUVCUDe52xqFpE0wr0ou/DFqTNIcJjcD5muXUugA+TaGsUHvHZCBx1D20SsYfD3LaOHWbx7QKG/EtQqF0ZiZDNKfnPpZ7phF1yZxHoBjBvi7SihJlPXG3MeGDgyOBe6O26OduAjZMhXamSWmCoeuPH2CP3mdycw95NC8/qimPBqeS46jgAA=",
+    credit: unsplash("Annie Spratt", "OYNhj3S_gUE"),
+  },
 } satisfies Record<string, ImageAsset>;

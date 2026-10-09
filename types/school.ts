@@ -40,6 +40,7 @@ export interface School {
   academics?: AcademicsPageContent;
   campusPage?: CampusPageContent;
   galleryPage?: GalleryPageContent;
+  eventsPage?: EventsPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -339,6 +340,57 @@ export interface GalleryCategory {
   label: string;
 }
 
+/* --------------------------------------------------------------- Events -- */
+
+/**
+ * The /events page. The events themselves are `school.events`; this holds
+ * the page around them. Whether an event is upcoming or past is decided in
+ * the visitor's browser from today's date in `location.timeZone`, so a
+ * static page never presents a finished event as upcoming.
+ */
+export interface EventsPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+  };
+  /** The `id` of one event to feature at the top. Omit for no feature. */
+  featuredId?: string;
+  /** Headings and labels for the listing. */
+  listing: {
+    /** Before the page knows today's date (and without JavaScript): all events by date. */
+    calendarTitle: string;
+    upcomingTitle: string;
+    pastTitle: string;
+    /** Events with no date yet; never shown as upcoming. */
+    undatedTitle: string;
+    /** Shown when there are no upcoming events at all. */
+    noUpcoming: string;
+    /** Label of the filter that shows every category, e.g. "All". */
+    allLabel: string;
+    /** Set false to hide the category filters even with enough events. */
+    filters?: boolean;
+  };
+  /** Categories events can belong to, in filter order; empty ones are hidden. */
+  categories: EventCategory[];
+  /** Small print under the listing, e.g. that entries are illustrative. */
+  note?: string;
+  closing: {
+    title: string;
+    description?: string;
+    primaryAction: LinkAction;
+    secondaryAction?: LinkAction;
+  };
+}
+
+export interface EventCategory {
+  /** Stable, URL-safe identifier, referenced by `SchoolEvent.category`. */
+  id: string;
+  label: string;
+}
+
 /* -------------------------------------------------------------- Contact -- */
 
 export interface SchoolLocation {
@@ -348,6 +400,11 @@ export interface SchoolLocation {
   postalCode: string;
   country: string;
   mapUrl?: string;
+  /**
+   * IANA time zone of the school, e.g. "Europe/London". Decides which events
+   * are upcoming and which are past. Defaults to UTC.
+   */
+  timeZone?: string;
 }
 
 export interface SchoolContact {
@@ -619,14 +676,38 @@ export interface Testimonial {
   portrait?: ImageAsset;
 }
 
+/**
+ * One event or dated piece of school news (`school.events`). Dates and
+ * times are the school's local time (`location.timeZone`). Publish only
+ * confirmed details: location, registration and status are facts.
+ */
 export interface SchoolEvent {
+  /** Stable, URL-safe identifier, unique within the list. */
   id: string;
   title: string;
-  /** ISO 8601 date, e.g. "2026-11-14". */
-  date: string;
-  location?: string;
   summary?: string;
-  image?: ImageAsset;
+  /** The `id` of one of `eventsPage.categories`. */
+  category?: string;
+  /**
+   * First day, as an ISO 8601 date: "2026-11-14". Omit while the date is
+   * unconfirmed; the event is then listed as "date to be confirmed".
+   */
+  date?: string;
+  /** Last day of a multi-day event, ISO 8601 date. */
+  endDate?: string;
+  /** 24-hour local times, "18:00". */
+  startTime?: string;
+  endTime?: string;
+  location?: string;
+  media?: EditorialMedia;
+  /** Where to read more, e.g. a page on this site. */
+  link?: LinkAction;
+  /** Only when registration is genuinely open. */
+  registration?: LinkAction;
+  /** Shown as a label; omit for a normally scheduled event. */
+  status?: "postponed" | "cancelled";
+  /** Set false to keep an entry in the data without publishing it. */
+  published?: boolean;
 }
 
 /**

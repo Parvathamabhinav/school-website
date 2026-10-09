@@ -33,6 +33,8 @@ export const school: School = {
     region: "Region",
     postalCode: "00000",
     country: "Country",
+    // Set to the school's own IANA time zone, e.g. "Europe/London".
+    timeZone: "UTC",
   },
   contact: {
     email: "office@example.com",
@@ -749,10 +751,136 @@ export const school: School = {
       secondaryAction: { label: "Explore admissions", href: "/admissions" },
     },
   },
+  // DEVELOPMENT CONTENT for /events: illustrative copy around the
+  // illustrative entries in `events` below.
+  eventsPage: {
+    seo: {
+      title: "Events",
+      description: "Events, activities and gatherings across the school year, from performances to sport and community days.",
+    },
+    hero: {
+      eyebrow: "What's happening",
+      title: "Moments that bring our community together.",
+      description: "Explore the activities, gatherings, and experiences that make school life memorable.",
+    },
+    featuredId: "sports-day",
+    listing: {
+      calendarTitle: "The school calendar",
+      upcomingTitle: "Coming up",
+      pastTitle: "Recently",
+      undatedTitle: "Dates to be confirmed",
+      noUpcoming: "New dates will be published here.",
+      allLabel: "All",
+    },
+    categories: [
+      { id: "learning", label: "Learning" },
+      { id: "arts", label: "Arts and music" },
+      { id: "sport", label: "Sport" },
+      { id: "community", label: "Community" },
+      { id: "admissions", label: "Admissions" },
+    ],
+    note: "Illustrative events for development, not this school's calendar. Dates, places and photographs are examples only.",
+    closing: {
+      title: "See school life in pictures.",
+      description: "Browse photographs from across the school year, or get in touch with a question.",
+      primaryAction: { label: "View the gallery", href: "/gallery" },
+      secondaryAction: { label: "Contact the school", href: "/contact" },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],
-  events: [],
+  // DEVELOPMENT CONTENT (see eventsPage above): illustrative events, not this
+  // school's calendar. Dates, times, places and photographs are examples;
+  // none of these events is confirmed. Replace with verified entries, and
+  // add `registration` only when registration is genuinely open.
+  events: [
+    {
+      id: "sports-day",
+      title: "Sports day",
+      summary: "A day of races, team games and dance on the playing fields, with every year group taking part.",
+      category: "sport",
+      date: "2026-11-14",
+      startTime: "09:00",
+      endTime: "15:00",
+      location: "School playing fields",
+      media: { image: photo.ribbonDance, focalPoint: "50% 45%" },
+    },
+    {
+      id: "art-exhibition",
+      title: "Autumn art exhibition",
+      summary: "Paintings, drawings and models from across the school, displayed for families to explore.",
+      category: "arts",
+      date: "2026-10-22",
+      endDate: "2026-10-24",
+      location: "Main hall",
+      media: { image: photo.drawingsWall },
+    },
+    {
+      id: "winter-concert",
+      title: "Winter concert",
+      summary: "Choirs, ensembles and soloists perform music they have been rehearsing through the term.",
+      category: "arts",
+      date: "2026-12-10",
+      startTime: "18:00",
+      endTime: "19:30",
+      media: { image: photo.stageTrumpet, focalPoint: "45% 50%" },
+    },
+    {
+      id: "open-morning",
+      title: "Open morning for families",
+      summary: "A chance to see lessons, meet teachers and ask questions about joining the school.",
+      category: "admissions",
+      date: "2027-01-16",
+      startTime: "09:30",
+      endTime: "12:00",
+      link: { label: "About admissions", href: "/admissions" },
+    },
+    {
+      id: "kite-afternoon",
+      title: "Kite-flying afternoon",
+      summary: "Families and students make and fly kites together on the field.",
+      category: "community",
+      status: "postponed",
+      media: { image: photo.kiteField },
+    },
+    {
+      id: "science-week",
+      title: "Science week",
+      summary: "Experiments, demonstrations and investigations across every year group.",
+      category: "learning",
+    },
+    {
+      id: "cultural-day",
+      title: "Cultural celebration day",
+      summary: "Students and families shared music, dress and food from the many cultures in the school community.",
+      category: "community",
+      date: "2026-09-19",
+      media: { image: photo.culturalDay, focalPoint: "50% 35%" },
+    },
+    {
+      id: "athletics",
+      title: "Athletics meet",
+      summary: "Track and field events, from sprints and relays to the long jump.",
+      category: "sport",
+      date: "2026-06-12",
+    },
+    {
+      id: "museum-visit",
+      title: "Museum visit",
+      summary: "Younger students spent a morning exploring a local museum.",
+      category: "learning",
+      date: "2026-05-21",
+      media: { image: photo.yellowHats, focalPoint: "50% 40%" },
+    },
+    {
+      id: "spring-fair",
+      title: "Spring fair",
+      summary: "An example of an entry kept in the data but not yet published.",
+      category: "community",
+      published: false,
+    },
+  ],
   // DEVELOPMENT PHOTOGRAPHY (see galleryPage above): stock images, in display
   // order. `category` is a galleryPage.collection.categories id.
   gallery: [
