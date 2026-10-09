@@ -490,6 +490,129 @@ export const school: School = {
       secondaryAction: { label: "Contact us", href: "/contact" },
     },
   },
+  // DEVELOPMENT CONTENT for /academics: illustrative copy and stock
+  // photography. No curriculum, board, grade range, subject list or
+  // teaching method here is a claim about any real school. Replace the
+  // stages with the school's own (add `range` only once confirmed), and add
+  // `support` only when assessment and support arrangements are verified.
+  academics: {
+    seo: {
+      title: "Academics",
+      description: "How our school approaches learning: the ideas behind it, how students progress, and what learning looks like day to day.",
+    },
+    hero: {
+      eyebrow: "Academic life",
+      title: "Curiosity is where learning begins.",
+      description:
+        "Explore an approach to learning that encourages students to ask questions, develop understanding, and put ideas into practice.",
+      media: { image: photo.youngScientist, focalPoint: "30% 40%", mobileFocalPoint: "28% 45%" },
+    },
+    philosophy: {
+      eyebrow: "Our learning philosophy",
+      title: "Understanding matters more than memorising.",
+      paragraphs: [
+        "We want students to leave each lesson knowing a little more and understanding it a little better. Knowledge matters; so does the ability to explain it, question it and use it.",
+        "Learning builds over time. Ideas met early are revisited, connected and deepened, so that students gain both secure foundations and the confidence to go further.",
+      ],
+      principles: [
+        {
+          id: "foundations",
+          title: "Secure foundations",
+          description: "Reading, writing and number are the base everything else rests on, and they are given time.",
+        },
+        {
+          id: "questions",
+          title: "Room for questions",
+          description: "Students are encouraged to ask why and how, and to treat not yet knowing as part of learning.",
+        },
+        {
+          id: "application",
+          title: "Ideas put to use",
+          description: "Knowledge is applied in problems, projects and discussion, so that it lasts beyond the test.",
+        },
+      ],
+      media: { image: photo.teacherGuidance, focalPoint: "60% 45%" },
+      note: "Illustrative philosophy for development. Replace with the school's own approach to learning.",
+    },
+    programmes: {
+      eyebrow: "Programmes",
+      title: "A path that grows with each student.",
+      description:
+        "Learning is organised in stages, each building on the one before, so that students move on with the knowledge and habits they need.",
+      stages: [
+        {
+          id: "early-years",
+          name: "Early years",
+          summary: "Play, language and early number, in a setting where young children feel safe to explore.",
+          focus: ["Language and communication", "Early number", "Social confidence"],
+        },
+        {
+          id: "primary",
+          name: "Primary",
+          summary: "Strong foundations in reading, writing and mathematics, alongside a broad introduction to the world.",
+          focus: ["Literacy", "Numeracy", "Enquiry across subjects"],
+        },
+        {
+          id: "middle-years",
+          name: "Middle years",
+          summary: "Deeper subject knowledge and growing independence, with more choice and responsibility.",
+          focus: ["Subject depth", "Study habits", "Independence"],
+        },
+        {
+          id: "senior-years",
+          name: "Senior years",
+          summary: "Specialised study and preparation for what comes next, with guidance along the way.",
+          focus: ["Specialisation", "Independent research", "Next steps"],
+        },
+      ],
+      pendingMessage: "Details of each stage will be published here once confirmed by the school.",
+      subjects: {
+        title: "Areas of learning",
+        items: ["Languages", "Mathematics", "Sciences", "Humanities", "The arts", "Physical education"],
+      },
+      note: "Illustrative stages and areas of learning for development. They are not this school's programmes, grade ranges or subject offer.",
+    },
+    approach: {
+      eyebrow: "How learning happens",
+      title: "Learning that is active, shared and guided.",
+      description: "A few of the ways students might engage with learning across a school day.",
+      practices: [
+        {
+          id: "questioning",
+          title: "Questioning and discussion",
+          description:
+            "Students explain their thinking, listen to others and test ideas aloud. Good questions are valued as much as good answers.",
+          media: { image: photo.raisedHands, focalPoint: "50% 55%", mobileFocalPoint: "35% 55%" },
+        },
+        {
+          id: "reading",
+          title: "Reading and research",
+          description: "Reading widely, finding things out and weighing up sources builds knowledge and independence.",
+          media: { image: photo.readingTogether, focalPoint: "52% 50%" },
+        },
+        {
+          id: "making",
+          title: "Making and collaborating",
+          description: "Projects ask students to plan, build and refine together, turning ideas into something real.",
+          media: { image: photo.makingTogether, focalPoint: "45% 40%" },
+        },
+        {
+          id: "feedback",
+          title: "Guidance and feedback",
+          description: "Teachers work alongside students, noticing what each one needs and helping them take the next step.",
+          media: { image: photo.workbookFeedback, focalPoint: "55% 45%" },
+        },
+      ],
+      note: "Illustrative practices for development, not a confirmed description of teaching at this school.",
+    },
+    closing: {
+      title: "See learning for yourself.",
+      description:
+        "Find out how to join the school, or get in touch with any question about learning here.",
+      primaryAction: { label: "Explore admissions", href: "/admissions" },
+      secondaryAction: { label: "Contact the school", href: "/contact" },
+    },
+  },
   programs: [],
   facilities: [],
   testimonials: [],

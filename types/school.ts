@@ -37,6 +37,7 @@ export interface School {
   admissions?: AdmissionsPageContent;
   contactPage?: ContactPageContent;
   about?: AboutPageContent;
+  academics?: AcademicsPageContent;
 }
 
 /* ---------------------------------------------------------------- Brand -- */
@@ -129,6 +130,93 @@ export interface SchoolValue {
   id: string;
   title: string;
   description: string;
+}
+
+/* ------------------------------------------------------------ Academics -- */
+
+/**
+ * The /academics page. Curriculum, stages, grade ranges, subjects and
+ * teaching practice are policy: publish only what the school confirms, and
+ * use each section's `note` to label illustrative development copy.
+ */
+export interface AcademicsPageContent {
+  /** Page title and meta description. */
+  seo: { title: string; description: string };
+  hero: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** Landscape photograph. */
+    media: EditorialMedia;
+  };
+  philosophy: {
+    eyebrow?: string;
+    title: string;
+    /** The first paragraph is set larger, as the lead. */
+    paragraphs: string[];
+    /** Short beliefs shown as a list; three read best. */
+    principles?: { id: string; title: string; description: string }[];
+    /** Landscape photograph. */
+    media?: EditorialMedia;
+    note?: string;
+  };
+  /** Rendered at #programmes. */
+  programmes: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /**
+     * The school's own stages, in order, however it groups them (phases,
+     * year groups, divisions). Empty until confirmed: `pendingMessage` shows.
+     */
+    stages: AcademicStage[];
+    /** Shown in place of the stages while there are none. */
+    pendingMessage?: string;
+    /** Broad areas of learning; render only when supplied. */
+    subjects?: { title: string; items: string[] };
+    note?: string;
+  };
+  /** "How learning happens": a few practices, each with a photograph. */
+  approach: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    /** Three to five read best. */
+    practices: LearningPractice[];
+    note?: string;
+  };
+  /** Assessment and student support. Omit until the school confirms it. */
+  support?: {
+    eyebrow?: string;
+    title: string;
+    items: { id: string; title: string; description: string }[];
+  };
+  closing: {
+    title: string;
+    description?: string;
+    primaryAction: LinkAction;
+    secondaryAction?: LinkAction;
+  };
+}
+
+export interface AcademicStage {
+  /** Stable, URL-safe identifier, unique within the list. */
+  id: string;
+  name: string;
+  /** e.g. "Ages 3–5" or "Grades 6–8". Omit rather than estimate. */
+  range?: string;
+  summary: string;
+  /** A few short emphases for this stage. */
+  focus?: string[];
+}
+
+export interface LearningPractice {
+  /** Stable, URL-safe identifier, unique within the list. */
+  id: string;
+  title: string;
+  description: string;
+  /** Cropped landscape or portrait depending on its place in the layout. */
+  media: EditorialMedia;
 }
 
 /* -------------------------------------------------------------- Contact -- */

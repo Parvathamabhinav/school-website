@@ -245,4 +245,58 @@ export const developmentPhotography = {
       "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAABQAwCdASoQABQAPu1iqU2ppaOiMAgBMB2JZQDE2Bh49eUlkAD+p4Jj6RNDy1S0oKZgmekLCm/dGFnfUBcKujq+KQL/HFEzPVY794dRvyOm1c9984oRVG/6aSAwDpLAV+h8pEWn1hgAAA==",
     credit: unsplash("Ahmet Yüksek", "-NuteFHjL3s"),
   },
+  youngScientist: {
+    src: "/images/development/academics/young-scientist.webp",
+    alt: "A young girl in a lab coat and safety goggles smiling as she watches a science experiment",
+    width: 2000,
+    height: 1500,
+    blurDataURL:
+      "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwAgCdASoQAAwAA4BaJZQCw7EDqa7NwozcUAD+ZlB/42c4P2e/ZlmwpUx1mSOFBKMxnyoUu8K9oMxjU4bUd38URLTL0Qzr6dTHQvjxHY+WcHlzmad1AfnXsqMAAA==",
+    credit: unsplash("YY TEOH", "WAEqUyi5CZQ"),
+  },
+  teacherGuidance: {
+    src: "/images/development/academics/teacher-guidance.webp",
+    alt: "A teacher leaning over a pupil's desk to guide her written work in a classroom",
+    width: 2000,
+    height: 1333,
+    blurDataURL:
+      "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAAAwAgCdASoQAAsAA4BaJbACdAD0mDX7UfOtQAD+tqoTSspPlmEpSi1/4ECnUfQBRVRZgi3zaz3GusjeHkVlexDxohShMUFdgOF0K+QX+aBD4SaEmmJONIt5r2adVSuVBJ2N4B4gAAA=",
+    credit: unsplash("Storyzangu Hub", "Ix-axXotEg0"),
+  },
+  raisedHands: {
+    src: "/images/development/academics/raised-hands.webp",
+    alt: "A full classroom of pupils in school uniform raising their hands to answer a question",
+    width: 2000,
+    height: 1335,
+    blurDataURL:
+      "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAADQAQCdASoQAAsAA4BaJQBOgCHZu1EoIAD+7NKHSi8x2xMzTOUivpkMhQ0Gn+w5Cz0GkuGNqc61yrjjqvAe3jRUHKXmVb4ebFcUpkrHqESisvxgFfFnDXCdtr/3UTfS8AgAAA==",
+    credit: unsplash("Emmanuel Ikwuegbu", "M-4lFg1Xfag"),
+  },
+  readingTogether: {
+    src: "/images/development/academics/reading-together.webp",
+    alt: "Three children in school uniform reading books together on a large green net, seen from above",
+    width: 2000,
+    height: 1323,
+    blurDataURL:
+      "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAAAwAgCdASoQAAsAA4BaJbACdADG8Zfqhcj2AAD+5fE26rReRBio36z1mi/vT4hCHn0GqpYjGemwGU+XFFqBfeqmh4aX2loDg1TBNEjsIMyKbs1WlmR/wAjA/BdfBfrV4OiHmlMZnz6f1ZCwAAA=",
+    credit: unsplash("Shivani Tibrewal", "xXzA1BxdCe4"),
+  },
+  makingTogether: {
+    src: "/images/development/academics/making-together.webp",
+    alt: "A group of children gathered around a 3D printer, watching a model being made",
+    width: 2000,
+    height: 1223,
+    blurDataURL:
+      "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAQAgCdASoQAAoAA4BaJaACdAEQ4fjQeZgAAP7s2rS5PPPh7GDgVQTN/h7tXFu7r3NdE9M0TlKJmNrrhgX5q5gbYY7hOhjY/1nuWuBBu2AKSV95X1YbCD+/NI1qm5p1FhCjDwzituyL4Cn8dEzNmrwAAAA=",
+    credit: unsplash("Adam Winger", "2fr56H6rgJk"),
+  },
+  workbookFeedback: {
+    src: "/images/development/academics/workbook-feedback.webp",
+    alt: "A teacher sitting beside a young pupil, talking him through the work in his exercise book",
+    width: 2000,
+    height: 1293,
+    blurDataURL:
+      "data:image/webp;base64,UklGRm4AAABXRUJQVlA4IGIAAABQAgCdASoQAAoAA4BaJYgCdH8AguBsTf+/W9AA/oO5Q9/hWJ0hTZNWpA06eyvVMnWaWWxGs4PBquqL9beerptmAk7mdqbu5lYf40LChYjRUjzzbIW8fwVdLHbNjD0gEiEgAA==",
+    credit: unsplash("Ronald Felton", "6c86TCPmNRQ"),
+  },
 } satisfies Record<string, ImageAsset>;
